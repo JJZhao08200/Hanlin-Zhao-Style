@@ -6,7 +6,7 @@ body {
 }
 
 .profile {
-    background: linear-gradient(to bottom, #333, #111);
+    background: linear-gradient(to bottom, #444, #222);
     padding: 40px 0;
     color: white;
     text-align: center;
@@ -21,7 +21,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     display: block;
     margin: auto;
-    animation: float 3s ease-in-out infinite;
+    transform: translateY(0);
 }
 
 @keyframes float {
@@ -43,12 +43,13 @@ nav ul {
 nav ul li a {
     color: #00bfff;
     text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 nav ul li a:hover {
     color: #ffcc00;
+    transform: scale(1.1);
 }
 
 .intro {
@@ -66,7 +67,8 @@ nav ul li a:hover {
 
 #dynamic-quote {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(0);
 }
 
 footer {
@@ -74,4 +76,14 @@ footer {
     color: white;
     padding: 20px 0;
     margin-top: 40px;
+}
+
+header {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
