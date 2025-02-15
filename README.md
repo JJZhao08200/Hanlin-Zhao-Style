@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +5,65 @@
     <title>Hanlin Zhao - 个人网站</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .profile {
+            background: linear-gradient(to right, #333, #555);
+            padding: 40px 0;
+            color: white;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .name {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #222;
+            padding: 15px 0;
+        }
+        nav ul li a {
+            color: #00bfff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        .intro {
+            margin: 40px 0;
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -44,8 +102,12 @@
         ];
         function changeQuote() {
             const quoteElement = document.getElementById("dynamic-quote");
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            quoteElement.textContent = quotes[randomIndex];
+            quoteElement.style.opacity = 0;
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                quoteElement.textContent = quotes[randomIndex];
+                quoteElement.style.opacity = 1;
+            }, 500);
         }
         setInterval(changeQuote, 5000);
     </script>
