@@ -6,38 +6,6 @@
     <title>Hanlin Zhao - 个人网站</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
-    <style>
-        .profile {
-            background: linear-gradient(to bottom, #333, #111);
-            padding: 40px 0;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            display: block;
-            margin: auto;
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        nav ul li a:hover {
-            color: #ffcc00;
-            transition: color 0.3s ease-in-out;
-        }
-        #dynamic-quote {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-    </style>
 </head>
 <body>
     <header>
