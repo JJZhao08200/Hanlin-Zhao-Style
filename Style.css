@@ -1,97 +1,66 @@
-/* General Reset */
 body {
-    font-family: 'Noto Sans SC', sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* Header Section */
-header {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 1.5rem;
+    font-family: 'Noto Sans SC', sans-serif;
 }
 
 .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    background: linear-gradient(to right, #333, #555);
+    padding: 40px 0;
+    color: white;
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .name {
     font-size: 2.5rem;
-    font-weight: bold;
     margin: 10px 0;
 }
 
-/* Navigation Menu */
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px;
-}
-
-nav ul li {
-    display: inline;
+    background: #222;
+    padding: 15px 0;
 }
 
 nav ul li a {
+    color: #00bfff;
     text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
     font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #0056b3;
+    color: #ffcc00;
 }
 
-/* Main Section */
-main {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.intro h2 {
-    font-size: 2rem;
-    font-weight: bold;
+.intro {
+    margin: 40px 0;
+    font-size: 1.5rem;
     color: #333;
-    margin-bottom: 15px;
 }
 
-.quote p {
+.quote {
     font-size: 1.3rem;
     font-style: italic;
     color: #666;
     margin-top: 20px;
 }
 
-/* Footer Section */
 footer {
-    background-color: #222;
+    background: #222;
     color: white;
     padding: 20px 0;
-    font-size: 0.9rem;
     margin-top: 40px;
 }
