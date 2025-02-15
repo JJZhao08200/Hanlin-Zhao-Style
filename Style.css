@@ -1,12 +1,12 @@
 body {
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #f9f3e4;
     margin: 0;
-    font-family: 'Noto Sans SC', sans-serif;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .profile {
-    background: linear-gradient(to bottom, #444, #222);
+    background: linear-gradient(to bottom, #8b0000, #5a1f1f);
     padding: 40px 0;
     color: white;
     text-align: center;
@@ -15,28 +15,27 @@ body {
 }
 
 @keyframes backgroundAnimation {
-    0% { background: #444; }
-    50% { background: #292929; }
-    100% { background: #444; }
+    0% { background: #8b0000; }
+    50% { background: #5a1f1f; }
+    100% { background: #8b0000; }
 }
 
 .profile-photo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid transparent;
-    background: linear-gradient(to right, #ff7eb3, #007bff);
+    border: 5px solid #a52a2a;
+    background: radial-gradient(circle, #fff 30%, #a52a2a);
     padding: 3px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     display: block;
     margin: auto;
-    transform: translateY(0);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .profile-photo:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 126, 179, 0.8);
+    box-shadow: 0 0 15px rgba(165, 42, 42, 0.8);
 }
 
 nav {
@@ -44,14 +43,10 @@ nav {
     width: 100%;
     top: 0;
     left: 0;
-    background: transparent;
+    background: rgba(139, 0, 0, 0.8);
     transition: background 0.4s ease-in-out;
     z-index: 1000;
-}
-
-nav.scrolled {
-    background: rgba(34, 34, 34, 0.9);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Kaushan Script', cursive;
 }
 
 nav ul {
@@ -64,30 +59,32 @@ nav ul {
 }
 
 nav ul li a {
-    color: #00bfff;
+    color: #ffcc00;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: all 0.4s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
-    background: linear-gradient(to right, #ff7eb3, #007bff);
+    color: #fff;
+    background: linear-gradient(to right, #ffcc00, #ff4500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .intro {
     margin: 40px 0;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1.8rem;
+    color: #5a1f1f;
+    font-weight: bold;
 }
 
 .quote {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-style: italic;
-    color: #666;
+    color: #a52a2a;
     margin-top: 20px;
+    font-family: 'ZCOOL XiaoWei', serif;
 }
 
 #dynamic-quote {
@@ -97,33 +94,35 @@ nav ul li a:hover {
 }
 
 .about-card {
-    background: white;
+    background: #fff7e6;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 20px auto;
+    border: 2px solid #a52a2a;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background: #007bff;
+    background: #8b0000;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
+    font-family: 'ZCOOL XiaoWei', serif;
 }
 
 .cta-button:hover {
-    background: #0056b3;
+    background: #5a1f1f;
 }
 
 .scroll-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(to right, #ff7eb3, #007bff);
+    background: linear-gradient(to right, #ffcc00, #ff4500);
     color: white;
     border: none;
     padding: 10px;
@@ -139,10 +138,11 @@ nav ul li a:hover {
 }
 
 footer {
-    background: #222;
+    background: #5a1f1f;
     color: white;
     padding: 20px 0;
     margin-top: 40px;
+    font-family: 'ZCOOL XiaoWei', serif;
 }
 
 header {
@@ -154,15 +154,3 @@ header {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-/* JavaScript to handle scrolling effect */
-<script>
-    window.addEventListener("scroll", function () {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
-    });
-</script>
