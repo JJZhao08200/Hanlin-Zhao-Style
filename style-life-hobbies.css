@@ -1,0 +1,107 @@
+/* 全局样式 */
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Noto Sans SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* 固定导航栏 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* 顶部背景 */
+.hero {
+    background: url('hero-bg.jpg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+/* 兴趣部分 */
+.section-title {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-top: 50px;
+}
+
+/* 兴趣时间轴 */
+.hobby-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* 每个兴趣项 */
+.hobby-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 60%;
+    margin: 15px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hobby-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+/* 文字内容 */
+.hobby-content {
+    text-align: left;
+    margin-left: 20px;
+}
+
+/* 图片大小统一 */
+.hobby-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+/* 页脚 */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
