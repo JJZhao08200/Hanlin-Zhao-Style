@@ -3,97 +3,101 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     font-family: 'Noto Sans SC', sans-serif;
-    color: #333;
 }
 
-header {
-    background: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.site-title {
-    font-size: 1.8rem;
-    color: #007bff;
-    font-weight: bold;
-}
-
-nav {
+/* 左上角 Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
     display: flex;
-    justify-content: center;
-    background: rgba(34, 34, 34, 0.9);
-    padding: 15px 0;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; /* 调整 Logo 大小 */
+    height: auto;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+/* 导航栏 */
+nav {
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
     z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
     display: flex;
+    justify-content: center;
     gap: 20px;
-}
-
-nav ul li {
-    display: inline-block;
+    margin: 0;
 }
 
 nav ul li a {
-    color: #00bfff;
+    color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    padding: 10px 15px;
-    transition: all 0.4s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
     color: #ffcc00;
 }
 
-.profile {
-    background: linear-gradient(to bottom, #444, #222);
-    padding: 100px 0 40px;
-    margin-top: 80px;
-    color: white;
+/* 大背景图 */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    color: white;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 4px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin: auto;
+.hero-text {
+    font-size: 3rem;
+    font-weight: bold;
 }
 
-.name {
-    font-size: 1.8rem;
+.hero-subtext {
+    font-size: 1.5rem;
     margin-top: 10px;
 }
 
+/* 引言 */
 .intro {
     margin: 40px 0;
     font-size: 1.5rem;
     color: #333;
 }
 
-.quote {
-    font-size: 1.3rem;
-    font-style: italic;
-    color: #666;
-    margin-top: 20px;
-}
-
-#dynamic-quote {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
+/* 页脚 */
 footer {
     background: #222;
     color: white;
