@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +8,11 @@
 </head>
 <body>
     <header>
+        <h1 class="site-title">Hanlin Zhao</h1>
+        <div class="profile">
+            <img src="hanlin_black_white.jpg" alt="Hanlin Zhao" class="profile-photo">
+            <h1 class="name">赵翰林</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">首页</a></li>
@@ -18,10 +22,6 @@
                 <li><a href="contact.html">联系</a></li>
             </ul>
         </nav>
-        <div class="profile">
-            <img src="hanlin_black_white.jpg" alt="Hanlin Zhao" class="profile-photo">
-            <h1 class="name">赵翰林</h1>
-        </div>
     </header>
     <main>
         <section class="intro">
