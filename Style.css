@@ -1,8 +1,17 @@
 body {
+    background: url('ink_texture.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    animation: inkFlow 10s infinite alternate;
     text-align: center;
-    background-color: #f9f9f9;
     margin: 0;
     font-family: 'ZCOOL XiaoWei', serif;
+}
+
+@keyframes inkFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .profile {
@@ -11,13 +20,6 @@ body {
     color: white;
     text-align: center;
     position: relative;
-    animation: backgroundAnimation 8s infinite alternate;
-}
-
-@keyframes backgroundAnimation {
-    0% { background: #1a237e; }
-    50% { background: #0d47a1; }
-    100% { background: #1a237e; }
 }
 
 .profile-photo {
@@ -30,79 +32,13 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     display: block;
     margin: auto;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(13, 71, 161, 0.8);
-}
-
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(13, 71, 161, 0.9);
-    transition: background 0.4s ease-in-out;
-    z-index: 1000;
-    font-family: 'Ma Shan Zheng', cursive;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px 0;
-}
-
-nav ul li a {
-    color: #1a237e;
-    text-decoration: none;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    transition: all 0.4s ease-in-out;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    color: #fff;
-    background: linear-gradient(to right, #3f51b5, #0d47a1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 3px solid #3f51b5;
 }
 
 nav ul li a:active {
-    color: white;
-    background: #0d47a1;
-    padding: 5px;
+    background: url('seal_stamp.png') no-repeat center;
+    background-size: contain;
+    padding: 10px;
     border-radius: 5px;
-}
-
-.intro {
-    margin: 40px 0;
-    font-size: 1.8rem;
-    color: #0d47a1;
-    font-weight: bold;
-}
-
-.quote {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: #3f51b5;
-    margin-top: 20px;
-    font-family: 'ZCOOL XiaoWei', serif;
-}
-
-#dynamic-quote {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-    transform: translateY(0);
 }
 
 .about-card {
@@ -112,12 +48,14 @@ nav ul li a:active {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 20px auto;
-    border: 2px solid #3f51b5;
-    transition: box-shadow 0.3s ease-in-out;
+    border: 6px solid transparent;
+    border-image: url('blue_pattern_border.png') 30 stretch;
+    transition: background 0.5s ease-in-out;
 }
 
 .about-card:hover {
-    box-shadow: 0 0 15px rgba(13, 71, 161, 0.5);
+    background: url('ink_spread.png') no-repeat center;
+    background-size: cover;
 }
 
 .cta-button {
@@ -171,3 +109,17 @@ header {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* JavaScript for dynamic title effect */
+<script>
+    const text = "探索数据之美，感受生活之诗。";
+    let i = 0;
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("dynamic-title").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+    window.onload = typeWriter;
+</script>
