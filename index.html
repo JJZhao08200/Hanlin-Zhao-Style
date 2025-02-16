@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanlin Zhao - 个人网站</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- 顶部导航 -->
-    <header class="top-bar">
-        <img src="logo.png" alt="Logo" class="logo">
+    <header>
         <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
             <ul>
                 <li><a href="index.html">首页</a></li>
                 <li><a href="about.html">关于我</a></li>
@@ -23,20 +23,15 @@
         </nav>
     </header>
 
-    <!-- 大背景图 -->
-    <section class="hero">
-        <h1 class="site-title">HANLIN ZHAO</h1>
-        <h2 class="subtitle">探索数据之美，感受生活之诗。</h2>
-    </section>
+    <div class="hero">
+        <h1>HANLIN ZHAO</h1>
+        <p>探索数据之美，感受生活之诗。</p>
+    </div>
 
-    <main>
-        <section class="intro">
-            <p>数据分析师 | 设计师 | 诗人 | 登山者</p>
-        </section>
-        <section class="quote">
-            <p id="dynamic-quote">人生如登山，每一步都是风景。</p>
-        </section>
-    </main>
+    <section class="intro">
+        <p>数据分析师 | 设计师 | 诗人 | 登山者</p>
+        <p id="dynamic-quote">人生如登山，每一步都是风景。</p>
+    </section>
 
     <footer>
         <p>© 2025 Hanlin Zhao. All rights reserved.</p>
@@ -60,6 +55,5 @@
         }
         setInterval(changeQuote, 5000);
     </script>
-
 </body>
 </html>
