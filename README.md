@@ -18,11 +18,11 @@
                 <li><a href="contact.html">联系</a></li>
             </ul>
         </nav>
+        <div class="profile">
+            <img src="hanlin_black_white.jpg" alt="Hanlin Zhao" class="profile-photo">
+            <h1 class="name">赵翰林</h1>
+        </div>
     </header>
-    <div class="profile">
-        <img src="hanlin_black_white.jpg" alt="Hanlin Zhao" class="profile-photo">
-        <h1 class="name">赵翰林</h1>
-    </div>
     <main>
         <section class="intro">
             <h2>「探索数据之美，感受生活之诗。」</h2>
