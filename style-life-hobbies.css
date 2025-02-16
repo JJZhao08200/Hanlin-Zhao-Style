@@ -39,7 +39,7 @@ nav ul li a:hover {
 
 /* 顶部背景 */
 .hero {
-    background: url('hero-bg.jpg') center/cover no-repeat;
+    background: url('lifeback.png') center/cover no-repeat;
     height: 60vh;
     display: flex;
     align-items: center;
