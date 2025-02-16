@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanlin Zhao - 个人网站</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -18,11 +18,11 @@
                 <li><a href="contact.html">联系</a></li>
             </ul>
         </nav>
-        <div class="profile">
-            <img src="hanlin_black_white.jpg" alt="Hanlin Zhao" class="profile-photo">
-            <h1 class="name">赵翰林</h1>
-        </div>
     </header>
+    <div class="profile">
+        <img src="hanlin_black_white.jpg" alt="Hanlin Zhao" class="profile-photo">
+        <h1 class="name">赵翰林</h1>
+    </div>
     <main>
         <section class="intro">
             <h2>「探索数据之美，感受生活之诗。」</h2>
