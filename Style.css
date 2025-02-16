@@ -3,7 +3,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     font-family: 'Noto Sans SC', sans-serif;
-    padding-top: 60px; /* 让导航栏不遮挡内容 */
+    padding-top: 70px; /* 让内容下移，防止导航栏遮挡 */
 }
 
 .profile {
@@ -39,11 +39,13 @@ body {
 }
 
 nav {
+    display: flex !important; /* 确保导航栏显示 */
+    justify-content: center;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(34, 34, 34, 0.9);
+    background: rgba(34, 34, 34, 0.9); /* 确保默认有背景色 */
     transition: background 0.4s ease-in-out;
     z-index: 1000;
     padding: 15px 0;
