@@ -107,14 +107,15 @@ h1, h2 {
 .timeline-item {
     margin: 20px 0;
     position: relative;
+        padding-left: 20px; /* 确保文字不会紧贴时间线 */
 }
 
 .timeline-item::before {
     content: '\25CF';
     color: #ffcc00;
     position: absolute;
-    left: -10px;
-    top: 0;
+    left: -25px;
+    top: 5;
     font-size: 1.2rem;
 }
 
