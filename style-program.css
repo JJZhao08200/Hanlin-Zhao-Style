@@ -1,97 +1,64 @@
 body {
-    text-align: center;
-    background-color: #111;
-    color: white;
+    margin: 0;
     font-family: 'Noto Sans SC', sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #000;
+    color: #fff;
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+/* 时间线 */
+.programs {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-.section-title {
+h2 {
     font-size: 2rem;
-    margin-top: 80px;
     color: #ffcc00;
 }
 
-.program-container {
+.timeline {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    padding-left: 20px;
+    border-left: 3px solid #ffcc00;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
     gap: 20px;
-    padding: 40px;
-}
-
-.program-card {
+    margin: 20px 0;
     position: relative;
-    width: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
 }
 
-.program-card img {
-    width: 100%;
-    height: 200px;
+.timeline-item img {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
-.program-card:hover img {
-    transform: scale(1.1);
-}
-
-.program-info {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    width: 100%;
+.timeline-item .content {
+    background: rgba(255, 255, 255, 0.1);
     padding: 10px;
-    box-sizing: border-box;
+    border-radius: 10px;
 }
 
-.program-info h2 {
-    font-size: 1.2rem;
-    margin: 0;
+.timeline-item h3 {
     color: #ffcc00;
 }
 
-.program-info p {
-    font-size: 1rem;
-    margin: 5px 0 0;
-    color: #ddd;
+/* Hover 效果 */
+.timeline-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
 footer {
-    background-color: #000;
-    color: white;
-    padding: 15px 0;
-    margin-top: 40px;
+    background: #111;
+    padding: 10px;
+    text-align: center;
 }
