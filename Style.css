@@ -25,16 +25,18 @@ body {
     height: 150px;
     border-radius: 50%;
     border: 4px solid transparent;
-    background: white; /* 确保头像背景是白色 */
+    background: linear-gradient(to right, #ff7eb3, #007bff);
     padding: 3px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     display: block;
     margin: auto;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .profile-photo:hover {
-    border: 4px solid;
-    border-image: linear-gradient(to right, #ff7eb3, #007bff) 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 126, 179, 0.8);
 }
 
 nav {
@@ -42,9 +44,14 @@ nav {
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(34, 34, 34, 0.9);
+    background: transparent;
     transition: background 0.4s ease-in-out;
     z-index: 1000;
+}
+
+nav.scrolled {
+    background: rgba(34, 34, 34, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -57,7 +64,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: #00bfff;
     text-decoration: none;
     font-size: 1.1rem;
     transition: all 0.4s ease-in-out;
