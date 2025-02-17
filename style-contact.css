@@ -27,6 +27,8 @@ header {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* 增加发光效果 */
 }
 
 .contact-hero p {
