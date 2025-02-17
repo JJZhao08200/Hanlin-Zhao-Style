@@ -93,8 +93,8 @@ nav ul li a:hover {
 
 /* 图片大小统一 */
 .hobby-item img {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
 }
 
