@@ -60,7 +60,9 @@ nav ul li a.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("about-bg.jpg") center center / cover no-repeat;
+    background: url("BP.png") center center / cover no-repeat;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero h1 {
