@@ -9,7 +9,7 @@ body {
 
 /* 让 program 容器居中 */
 .program-container {
-    max-width: 800px;
+    max-width: 1600px;
     margin: auto;
     padding: 80px 20px;
 }
@@ -47,8 +47,8 @@ body {
 
 /* 图片固定大小 */
 .timeline-image {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
     object-fit: cover;
     border: 2px solid #ffcc00;
