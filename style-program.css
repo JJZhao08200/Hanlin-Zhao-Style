@@ -87,12 +87,12 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffcc00;
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ffcc00;
+    color: #ff6600;
 }
