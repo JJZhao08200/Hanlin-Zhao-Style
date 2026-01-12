@@ -61,7 +61,7 @@ nav ul li a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("An.png") center center / cover no-repeat;
+    background: url("hero.JPG") center center / cover no-repeat;
 }
 
 /* 让底部渐变更自然 */
