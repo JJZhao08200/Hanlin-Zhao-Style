@@ -30,16 +30,18 @@
       <h1>MY PROGRAMS</h1>
       <p>Selected projects in analytics, finance &amp; data storytelling</p>
 
-      <div class="hero-actions">
-        <a class="btn ghost" href="#google-hack">2025 Google Hackathon</a>
-        <a class="btn ghost" href="#climate-hack">2025 Climate Finance</a>
-        <a class="btn ghost" href="#learning-hack">2024 Learning Analytics</a>
+      <!-- Hero Jump Buttons (scroll spy highlight) -->
+      <div class="hero-actions program-jump">
+        <a class="btn ghost jump-link" href="#google-hack">2025 Google Hackathon</a>
+        <a class="btn ghost jump-link" href="#climate-hack">2025 Climate Finance</a>
+        <a class="btn ghost jump-link" href="#learning-hack">2024 Learning Analytics</a>
       </div>
     </section>
 
     <section class="about-container">
+
       <!-- ===== Project 1 ===== -->
-      <div class="card m-hover" id="google-hack">
+      <article class="card m-hover program-card" id="google-hack">
         <div class="t-head">
           <span class="pill">Hackathon · Analytics</span>
           <span class="date">2025</span>
@@ -50,8 +52,14 @@
           End-to-end YouTube analytics system combining APIs, ML forecasting, and interactive dashboards.
         </p>
 
+        <!-- Role / Impact (scan-friendly) -->
+        <div class="ri">
+          <div class="ri-row"><span class="ri-k">My role</span><span class="ri-v">API integration · Forecasting (ARIMA/LSTM) · Dashboard build</span></div>
+          <div class="ri-row"><span class="ri-k">Impact</span><span class="ri-v">Real-time reporting + trend prediction to support growth decisions</span></div>
+        </div>
+
         <!-- Cover Image -->
-        <img src="googlehax.jpg" alt="UBC Sauder and Google Hackathon" class="project-cover" />
+        <img src="googlehax.jpg" alt="UBC Sauder and Google Hackathon" class="project-cover" loading="lazy" />
 
         <div class="stack">
           <span class="chip">YouTube Analytics API</span>
@@ -86,17 +94,15 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn ghost" href="https://jjzhao08200.github.io/Journey-to-the-west/index.html" target="_blank">
+          <a class="btn ghost" href="https://jjzhao08200.github.io/Journey-to-the-west/index.html" target="_blank" rel="noopener">
             View Demo
           </a>
-          <span class="subtitle" style="margin:0;">
-            (You can type anything for username and password)
-          </span>
+          <span class="subtitle note-inline">(You can type anything for username and password)</span>
         </div>
-      </div>
+      </article>
 
       <!-- ===== Project 2 ===== -->
-      <div class="card m-hover" id="climate-hack">
+      <article class="card m-hover program-card" id="climate-hack">
         <div class="t-head">
           <span class="pill">Hackathon · Climate Finance</span>
           <span class="date">2025</span>
@@ -107,8 +113,14 @@
           Project finance strategy for Deep Sky — a large-scale Direct Air Capture (DAC) facility in Québec.
         </p>
 
+        <!-- Role / Impact -->
+        <div class="ri">
+          <div class="ri-row"><span class="ri-k">My role</span><span class="ri-v">Project finance structuring · Risk assessment · Model assumptions &amp; DSCR logic</span></div>
+          <div class="ri-row"><span class="ri-k">Impact</span><span class="ri-v">Clear bankability narrative + financing options for decision discussions</span></div>
+        </div>
+
         <!-- Cover Image -->
-        <img src="Chack.png" alt="UBC Climate Innovation Challenge Hackathon" class="project-cover" />
+        <img src="Chack.png" alt="UBC Climate Innovation Challenge Hackathon" class="project-cover" loading="lazy" />
 
         <div class="stack">
           <span class="chip">Project Finance</span>
@@ -124,19 +136,21 @@
           the financing strategy for Deep Sky, a large-scale Direct Air Capture (DAC) facility in Québec.
         </p>
 
-        <p>✔️ Climate Finance &amp; Offtake Agreements – Explored sustainability-linked bonds, debt structuring, and revenue stability.</p>
-        <p>✔️ Carbon Markets &amp; Risk Management – Assessed the feasibility of carbon credit pricing, voluntary/compliance markets, and offtake strategies.</p>
-        <p>✔️ Financial Modeling &amp; Investment Structuring – Evaluated project bankability, DSCR, and equity/debt allocation to optimize returns.</p>
+        <ul class="checklist">
+          <li><strong>Climate Finance &amp; Offtake Agreements</strong> – Explored sustainability-linked bonds, debt structuring, and revenue stability.</li>
+          <li><strong>Carbon Markets &amp; Risk Management</strong> – Assessed the feasibility of carbon credit pricing, voluntary/compliance markets, and offtake strategies.</li>
+          <li><strong>Financial Modeling &amp; Investment Structuring</strong> – Evaluated project bankability, DSCR, and equity/debt allocation to optimize returns.</li>
+        </ul>
 
         <p>
           This experience deepened my understanding of sustainable finance, project structuring, and carbon markets,
           reinforcing the role of finance in accelerating climate innovation. Grateful for the insights from industry experts
           and my teammates!
         </p>
-      </div>
+      </article>
 
       <!-- ===== Project 3 ===== -->
-      <div class="card m-hover" id="learning-hack">
+      <article class="card m-hover program-card" id="learning-hack">
         <div class="t-head">
           <span class="pill">Hackathon · Learning Analytics</span>
           <span class="date">2024</span>
@@ -147,8 +161,14 @@
           Award-winning dashboards to improve engagement quality and reduce disengaged “spam” posts in online learning.
         </p>
 
+        <!-- Role / Impact -->
+        <div class="ri">
+          <div class="ri-row"><span class="ri-k">My role</span><span class="ri-v">Metric design · Dashboard build · Data analysis (Python/Tableau) · Storytelling</span></div>
+          <div class="ri-row"><span class="ri-k">Impact</span><span class="ri-v">Won “Most Relevant to Teaching and Learning” for actionable instructor/student views</span></div>
+        </div>
+
         <!-- Cover Image -->
-        <img src="Lhack.png" alt="Learning Analytics Hackathon" class="project-cover" />
+        <img src="Lhack.png" alt="Learning Analytics Hackathon" class="project-cover" loading="lazy" />
 
         <div class="stack">
           <span class="chip">Python</span>
@@ -171,7 +191,8 @@
           which were instrumental in creating the dashboards and analyzing data to provide actionable insights. These combined
           efforts led to a solution that enhanced the overall learning experience and contributed to our success in the competition.
         </p>
-      </div>
+      </article>
+
     </section>
   </main>
 
@@ -179,23 +200,7 @@
     <p>© 2025 Hanlin Zhao. All rights reserved.</p>
   </footer>
 
-  <!-- ===== Small CSS patch (only for this page) ===== -->
-  <style>
-    /* Cover image style for program cards */
-    .project-cover{
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-      margin: 14px 0 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-    }
-    /* Make hero chips wrap nicely on small screens */
-    @media (max-width: 640px){
-      .hero-actions{ gap: 10px; }
-      .btn{ font-size: 13px; }
-    }
-  </style>
+  <!-- Scroll spy for hero buttons -->
+  <script src="program.js"></script>
 </body>
 </html>
