@@ -1,19 +1,28 @@
 /* ==============================
-   Root variables & base
+   Programs page (self-contained)
+   Murphy-like, no dependency
 ============================== */
+
 :root{
   --bg:#000;
   --text:#fff;
   --muted:rgba(255,255,255,.72);
   --line:rgba(255,255,255,.12);
   --gold:#ffcc00;
+
   --card:rgba(255,255,255,.06);
   --card2:rgba(255,255,255,.08);
+
   --radius:14px;
   --maxw:980px;
 }
 
 *{ box-sizing:border-box; }
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:110px; /* avoid fixed header overlap */
+}
 
 body{
   margin:0;
@@ -29,7 +38,7 @@ body{
 /* ==============================
    Header / Nav
 ============================== */
-header{
+.site-header{
   position:fixed;
   top:0; left:0;
   width:100%;
@@ -39,36 +48,35 @@ header{
   justify-content:space-between;
   padding:10px 30px;
   background:rgba(0,0,0,.85);
-  backdrop-filter: blur(6px);
   border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(6px);
 }
 
-.logo img{ height:44px; }
+.brand-logo{ height:44px; display:block; }
 
-nav{
-  flex-grow:1;
+.site-nav{
+  flex:1;
   display:flex;
   justify-content:center;
 }
 
-nav ul{
+.site-nav ul{
   list-style:none;
-  margin:0;
-  padding:0;
+  padding:0; margin:0;
   display:flex;
   gap:30px;
 }
 
-nav ul li a{
+.site-nav a{
+  color:#fff;
   text-decoration:none;
-  color:white;
   font-size:1.05rem;
   opacity:.9;
-  transition:color .18s ease, opacity .18s ease;
+  transition: color .18s ease, opacity .18s ease;
 }
 
-nav ul li a:hover,
-nav ul li a.active{
+.site-nav a:hover,
+.site-nav a.active{
   color:var(--gold);
   opacity:1;
 }
@@ -78,13 +86,16 @@ nav ul li a.active{
 ============================== */
 .hero{
   height:320px;
-  padding-top:70px;
+  padding-top:70px; /* offset fixed header */
   display:flex;
-  flex-direction:column;
-  justify-content:center;
   align-items:center;
-  background:url("BP.png") center / cover no-repeat;
+  justify-content:center;
+  background: url("BP.png") center/cover no-repeat;
   border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.hero-inner{
+  padding: 0 18px;
 }
 
 .hero h1{
@@ -92,14 +103,15 @@ nav ul li a.active{
   font-size:2.6rem;
   font-weight:800;
   color:var(--gold);
+  letter-spacing:.6px;
 }
 
 .hero p{
-  margin:8px 0 0;
-  font-size:1.15rem;
+  margin:10px 0 0;
   color:rgba(255,255,255,.9);
 }
 
+/* Hero buttons */
 .hero-actions{
   margin-top:18px;
   display:flex;
@@ -112,88 +124,64 @@ nav ul li a.active{
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   padding:9px 14px;
   border-radius:999px;
-  font-size:14px;
-  text-decoration:none;
   border:1px solid rgba(255,255,255,.18);
-  color:rgba(255,255,255,.95);
-  background:rgba(0,0,0,.25);
-  transition:transform .18s ease, border-color .18s ease, background .18s ease;
+  background: rgba(0,0,0,.25);
+  color: rgba(255,255,255,.95);
+  text-decoration:none;
+  font-size:14px;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
-  border-color:rgba(255,204,0,.7);
-  background:rgba(255,255,255,.06);
+  transform: translateY(-2px);
+  border-color: rgba(255,204,0,.70);
+  background: rgba(255,255,255,.06);
 }
 
 .btn.ghost{
-  border-color:rgba(255,255,255,.18);
-}
-
-/* Scroll spy active */
-.program-jump .jump-link.is-active{
-  border-color:rgba(255,204,0,.95);
-  background:rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.18);
 }
 
 /* ==============================
-   Main container
+   Container
 ============================== */
-main{ padding-bottom:36px; }
-
-.about-container{
-  max-width:var(--maxw);
-  margin:28px auto 0;
-  padding:26px;
+.container{
+  max-width: var(--maxw);
+  margin: 28px auto 0;
+  padding: 26px;
   text-align:left;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(255,255,255,.04);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
 }
 
 /* ==============================
-   Card
+   Cards
 ============================== */
 .card{
-  margin-bottom:28px;
-  padding:22px;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.10);
-  background:var(--card);
+  padding: 22px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: var(--card);
+  margin-bottom: 28px;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
 
-.m-hover{
-  transition:transform .18s ease, background .18s ease, border-color .18s ease;
-}
-.m-hover:hover{
-  transform:translateY(-2px);
-  background:var(--card2);
-  border-color:rgba(255,255,255,.18);
+.card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.18);
+  background: var(--card2);
 }
 
-.card h2{
-  margin:6px 0 6px;
-  font-size:1.5rem;
-  color:var(--gold);
-}
-
-.subtitle{
-  margin:0 0 10px;
-  font-size:.95rem;
-  color:rgba(255,255,255,.78);
-}
-
-/* ==============================
-   Meta header
-============================== */
-.t-head{
+.meta{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   gap:10px;
-  margin-bottom:6px;
+  margin-bottom: 8px;
 }
 
 .pill{
@@ -201,78 +189,89 @@ main{ padding-bottom:36px; }
   padding:4px 10px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.14);
-  background:rgba(0,0,0,.22);
-  color:rgba(255,255,255,.78);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.78);
 }
 
-.date{
+.year{
   font-size:12px;
   font-weight:700;
-  color:rgba(255,204,0,.9);
+  color: rgba(255,204,0,.92);
+}
+
+h2{
+  margin: 6px 0 6px;
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.subtitle{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.78);
+  font-size: .95rem;
 }
 
 /* ==============================
-   Role / Impact block
+   Role / Impact
 ============================== */
 .ri{
-  margin:12px 0 10px;
-  padding:12px 14px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(0,0,0,.18);
+  margin: 12px 0 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
 }
 
 .ri-row{
-  display:flex;
-  gap:12px;
-  margin:6px 0;
+  display:grid;
+  grid-template-columns: 84px 1fr; /* ✅ 彻底解决 My role 粘连 */
+  gap: 12px;
+  margin: 6px 0;
+  align-items:flex-start;
 }
 
 .ri-k{
-  flex:0 0 72px;
   font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.3px;
-  color:rgba(255,204,0,.9);
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  color: rgba(255,204,0,.90);
+  white-space:nowrap;
 }
 
 .ri-v{
   font-size:13.5px;
-  color:rgba(255,255,255,.85);
+  color: rgba(255,255,255,.85);
+  line-height:1.55;
 }
 
 /* ==============================
-   Project cover image (KEY PART)
+   Cover images (NO CROP)
+   ✅ 全图显示，不再“只剩边角”
 ============================== */
-/* Programs cover image — show full image (no crop), keep it tasteful */
-.project-cover{
+.cover{
   width: 100%;
-  height: auto;                 /* ✅ 不再强制高度 */
-  max-height: 320px;            /* ✅ 控制不要太大 */
-  object-fit: contain;          /* ✅ 完整显示，不裁切 */
-  object-position: center;
-  display: block;
+  height: auto;
+  max-height: 320px;          /* 控制大小 */
+  object-fit: contain;        /* ✅ 关键：不裁切 */
+  background: rgba(0,0,0,.18);
   border-radius: 12px;
-  margin: 10px 0 12px;
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);  /* ✅ contain 时两侧留黑更自然 */
+  display:block;
+  margin: 10px 0 12px;
 }
 
 @media (max-width: 640px){
-  .project-cover{
-    max-height: 220px;
-  }
+  .cover{ max-height: 220px; }
 }
-
 
 /* ==============================
    Chips
 ============================== */
-.stack{
+.chips{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  margin-bottom:12px;
+  margin-bottom: 12px;
 }
 
 .chip{
@@ -280,41 +279,67 @@ main{ padding-bottom:36px; }
   padding:5px 9px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.14);
-  background:rgba(0,0,0,.22);
-  color:rgba(255,255,255,.82);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.82);
 }
 
 /* ==============================
-   Checklist
+   Content
 ============================== */
+.prose p{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.86);
+}
+
+/* Checklist */
 .checklist{
-  margin:10px 0 12px;
-  padding-left:18px;
+  margin: 10px 0 12px;
+  padding-left: 18px;
+  color: rgba(255,255,255,.86);
 }
 
 .checklist li{
-  margin:6px 0;
-  color:rgba(255,255,255,.84);
+  margin: 8px 0;
+  line-height:1.6;
+}
+
+/* Actions */
+.actions{
+  margin-top: 12px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.note{
+  color: rgba(255,255,255,.70);
+  font-size: 13px;
 }
 
 /* ==============================
    Footer
 ============================== */
-footer{
-  margin-top:40px;
-  padding:22px 0;
-  border-top:1px solid rgba(255,255,255,.08);
-  color:rgba(255,255,255,.8);
+.site-footer{
+  margin-top: 40px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.82);
   text-align:center;
 }
 
 /* ==============================
    Responsive
 ============================== */
-@media (max-width:640px){
-  nav ul{ gap:16px; }
-  nav ul li a{ font-size:.95rem; }
+@media (max-width: 640px){
+  .site-nav ul{ gap:16px; }
+  .site-nav a{ font-size:.95rem; }
+
+  .hero{ height:340px; }
   .hero h1{ font-size:2.2rem; }
-  .about-container{ padding:18px; }
-  .card{ padding:18px; }
+
+  .container{ padding: 18px; }
+  .card{ padding: 18px; }
+
+  .ri-row{ grid-template-columns: 72px 1fr; }
 }
