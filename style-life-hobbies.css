@@ -1,107 +1,308 @@
-/* 全局样式 */
-body {
-    background-color: #111;
-    color: #fff;
-    font-family: 'Noto Sans SC', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+/* ==============================
+   Life & Hobbies — Murphy-style gallery
+   Text content unchanged; layout only
+============================== */
+
+:root{
+  --bg:#000;
+  --text:#fff;
+  --muted:rgba(255,255,255,.72);
+  --line:rgba(255,255,255,.12);
+  --gold:#ffcc00;
+
+  --card:rgba(255,255,255,.06);
+  --card2:rgba(255,255,255,.08);
+
+  --radius:14px;
+  --maxw: 900px; /* v3 center column */
 }
 
-/* 固定导航栏 */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 0;
-    z-index: 1000;
+*{ box-sizing:border-box; }
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:110px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+body{
+  margin:0;
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+               Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  letter-spacing:.2px;
+  text-align:center;
+
+  /* Scheme v3: quiet margins */
+  background:
+    radial-gradient(1200px 600px at 50% 120px,
+      rgba(255,255,255,.035),
+      rgba(0,0,0,0) 60%
+    ),
+    linear-gradient(to right,
+      #000 0%,
+      #000 18%,
+      #050505 50%,
+      #000 82%,
+      #000 100%
+    );
 }
 
-nav ul li a {
-    color: #ffcc00;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+/* ==============================
+   Header / Nav
+============================== */
+.site-header{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 30px;
+  background:rgba(0,0,0,.85);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(6px);
 }
 
-nav ul li a:hover {
-    color: #fff;
+.brand-logo{ height:44px; display:block; }
+
+.site-nav{
+  flex:1;
+  display:flex;
+  justify-content:center;
 }
 
-/* 顶部背景 */
-.hero {
-    background: url('lifeback.png') center/cover no-repeat;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.site-nav ul{
+  list-style:none;
+  padding:0; margin:0;
+  display:flex;
+  gap:30px;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px 30px;
-    border-radius: 10px;
+.site-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:1.05rem;
+  opacity:.9;
+  transition: color .18s ease, opacity .18s ease;
 }
 
-/* 兴趣部分 */
-.section-title {
-    font-size: 2rem;
-    color: #ffcc00;
-    margin-top: 50px;
+.site-nav a:hover,
+.site-nav a.active{
+  color:var(--gold);
+  opacity:1;
 }
 
-/* 兴趣时间轴 */
-.hobby-timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+/* ==============================
+   Hero (Life & Hobbies) — softer mood
+============================== */
+.hero{
+  height:320px;
+  padding-top:70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.45) 0%,
+      rgba(0,0,0,.55) 60%,
+      rgba(0,0,0,.70) 100%
+    ),
+    url("BP.png") center/cover no-repeat;
+
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* 每个兴趣项 */
-.hobby-item {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    width: 60%;
-    margin: 15px 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-inner{
+  padding: 0 18px;
 }
 
-.hobby-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+.hero h1{
+  margin:0;
+  font-size:2.6rem;
+  font-weight:800;
+  color:var(--gold);
+  letter-spacing:.6px;
 }
 
-/* 文字内容 */
-.hobby-content {
-    text-align: left;
-    margin-left: 20px;
+.hero p{
+  margin:10px 0 0;
+  color:rgba(255,255,255,.90);
 }
 
-/* 图片大小统一 */
-.hobby-item img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
+/* ==============================
+   Container
+============================== */
+.container{
+  max-width: var(--maxw);
+  margin: 28px auto 0;
+  padding: 24px;
+  text-align:left;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
 }
 
-/* 页脚 */
-footer {
-    background: #222;
-    color: white;
-    padding: 20px 0;
-    margin-top: 40px;
+.section-title{
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  letter-spacing: .3px;
+  color: var(--gold);
+}
+
+/* ==============================
+   Hobby Cards (gallery)
+============================== */
+.hobby-card{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  align-items:start;
+
+  padding: 18px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.10);
+  background: var(--card);
+  margin-bottom: 22px;
+
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.hobby-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.18);
+  background: var(--card2);
+}
+
+.hobby-media{
+  border-radius: 12px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+
+.hobby-img{
+  width:100%;
+  height: 220px;
+  object-fit: cover;
+  display:block;
+}
+
+/* tasteful image hover (desktop only) */
+@media (hover: hover) and (pointer: fine){
+  .hobby-img{
+    transition: transform .22s ease, filter .22s ease;
+  }
+  .hobby-card:hover .hobby-img{
+    transform: scale(1.01);
+    filter: saturate(1.03);
+  }
+}
+
+.hobby-body{ min-width: 0; }
+
+.hobby-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.hobby-title{
+  margin:0;
+  font-size: 1.25rem;
+  color: rgba(255,255,255,.95);
+}
+
+.badge{
+  flex: 0 0 auto;
+  font-size:12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.78);
+}
+
+.tagline{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.78);
+  font-size: .95rem;
+}
+
+.prose p{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.86);
+}
+
+.poem{
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+
+.poem p{
+  margin: 0 0 6px;
+  color: rgba(255,255,255,.90);
+  letter-spacing: .4px;
+}
+
+.poem p:last-child{ margin-bottom: 0; }
+
+/* Chips */
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top: 10px;
+}
+
+.chip{
+  font-size:12px;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.82);
+}
+
+/* ==============================
+   Footer
+============================== */
+.site-footer{
+  margin-top: 40px;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.82);
+  text-align:center;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 900px){
+  .hobby-card{
+    grid-template-columns: 1fr;
+  }
+  .hobby-img{
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px){
+  .site-nav ul{ gap:16px; }
+  .site-nav a{ font-size:.95rem; }
+
+  .hero{ height:340px; }
+  .hero h1{ font-size:2.2rem; }
+
+  .container{ padding: 18px; }
+  .hobby-card{ padding: 16px; }
+  .hobby-img{ height: 220px; }
 }
