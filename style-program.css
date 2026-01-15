@@ -343,3 +343,49 @@ h2{
 
   .ri-row{ grid-template-columns: 72px 1fr; }
 }
+
+/* ===== Upgrade 1: Image subtle hover (desktop only) ===== */
+@media (hover: hover) and (pointer: fine){
+  .cover{
+    transition: transform .22s ease, border-color .22s ease, filter .22s ease;
+  }
+  .card:hover .cover{
+    transform: scale(1.01);
+    border-color: rgba(255,255,255,.22);
+    filter: saturate(1.03);
+  }
+}
+
+/* ===== Upgrade 2: Chips max 2 lines (cleaner) ===== */
+/* Works best with consistent line-height */
+.chips{
+  line-height: 1.2;
+}
+
+/* Apply limit only when you add .chips--limit class in HTML */
+.chips--limit{
+  max-height: calc( (12px * 1.2) + 10px ); /* ~2 rows visual */
+  overflow: hidden;
+}
+
+/* ===== Upgrade 3: Small section headings inside prose ===== */
+.prose h3{
+  margin: 12px 0 6px;
+  font-size: 13px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: rgba(255,204,0,.92);
+}
+
+/* ===== Upgrade 4: Primary button (for Demo) ===== */
+.btn.primary{
+  border-color: rgba(255,204,0,.95);
+  background: rgba(255,204,0,.12);
+  color: rgba(255,255,255,.98);
+}
+
+.btn.primary:hover{
+  background: rgba(255,204,0,.18);
+  border-color: rgba(255,204,0,1);
+}
+
