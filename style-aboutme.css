@@ -1,4 +1,4 @@
-/* ===== Base: keep your black theme, make Murphy-like spacing & hierarchy ===== */
+/* ===== Hanlin Zhao - About Page (Murphy-like, Black+Gold) ===== */
 
 :root{
   --bg:#000;
@@ -9,7 +9,6 @@
   --card:rgba(255,255,255,.06);
   --card2:rgba(255,255,255,.08);
   --radius:14px;
-  --maxw:980px;
 }
 
 *{ box-sizing:border-box; }
@@ -107,6 +106,7 @@ nav ul li a.active{
   justify-content:center;
 }
 
+/* Buttons */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -136,14 +136,20 @@ nav ul li a.active{
   border-color: rgba(255,255,255,.30);
 }
 
+/* Sidebar CTA full width button */
+.btn.full{
+  width: 100%;
+}
+
 /* ===== Main Layout ===== */
 
 main{
   padding-bottom: 36px;
 }
 
+/* Two-column Murphy layout */
 .about-container{
-  max-width: 820px;
+  max-width: 1180px;        /* ✅ 拉宽，解决两边空白 */
   margin: 28px auto 0;
   text-align:left;
   padding: 26px;
@@ -152,9 +158,83 @@ main{
   background: rgba(255,255,255,.04);
 }
 
-/* Section title (Murphy vibe) */
+.layout-2col{
+  display:grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 26px;
+  align-items:start;
+}
+
+/* Main panel */
+.main-panel{
+  display:flex;
+  flex-direction:column;
+  gap: 22px;
+}
+
+/* ===== Sidebar ===== */
+
+.side-panel{
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:14px;
+  padding:18px;
+  background: rgba(255,255,255,.05);
+  position: sticky;
+  top: 110px; /* header 对齐 */
+}
+
+.side-panel h3{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--gold);
+  letter-spacing: .2px;
+}
+
+.side-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 18px;
+}
+
+.side-list li{
+  font-size: 13.5px;
+  color: rgba(255,255,255,.78);
+  margin-bottom: 10px;
+  line-height:1.55;
+}
+
+.side-list strong{
+  color: rgba(255,255,255,.92);
+  font-weight:600;
+}
+
+.side-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.side-tags span{
+  font-size:12px;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.80);
+}
+
+/* Sidebar CTA group */
+.side-cta{
+  margin-top: 16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* ===== Section title ===== */
+
 .section-title{
-  margin: 34px 0 14px;
+  margin: 0 0 14px;
   font-size: 1.4rem;
   letter-spacing: .3px;
   color: var(--gold);
@@ -188,7 +268,7 @@ main{
   color: rgba(255,255,255,.86);
 }
 
-/* Murphy-like hover: subtle lift, no heavy shadow */
+/* Murphy-like hover: subtle lift */
 .m-hover{
   transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
@@ -226,7 +306,6 @@ main{
   background: rgba(255,255,255,.06);
 }
 
-/* Subtitle */
 .subtitle{
   margin: 10px 0 0;
   color: rgba(255,255,255,.80);
@@ -257,10 +336,10 @@ main{
   border-color: rgba(255,204,0,.35);
 }
 
-/* ===== Timeline (Murphy-like list cards) ===== */
+/* ===== Timeline ===== */
 
 .timeline-wrap{
-  margin-top: 22px;
+  margin-top: 0;
 }
 
 .timeline{
@@ -326,15 +405,9 @@ main{
   line-height: 1.55;
 }
 
-/* hover-reveal keywords (Murphy vibe) */
-.t-meta{
-  margin-top: 10px;
-  font-size: 12px;
-  color: rgba(255,255,255,.55);
-}
-
+/* hover reveal keywords */
 .t-keywords{
-  margin-top: 8px;
+  margin-top: 10px;
   display:flex;
   flex-wrap:wrap;
   gap:8px;
@@ -369,6 +442,15 @@ footer{
 
 /* ===== Responsive ===== */
 
+@media (max-width: 860px){
+  .layout-2col{
+    grid-template-columns: 1fr;
+  }
+  .side-panel{
+    position: static;
+  }
+}
+
 @media (max-width: 640px){
   nav ul{ gap: 16px; }
   nav ul li a{ font-size: 0.98rem; }
@@ -381,79 +463,3 @@ footer{
 
   .t-head{ flex-direction: column; align-items: flex-start; }
 }
-
-/* ===== Two-column Murphy layout ===== */
-
-.layout-2col{
-  display:grid;
-  grid-template-columns: 1fr 2.2fr;
-  gap: 26px;
-  align-items:start;
-}
-
-/* Sidebar */
-.side-panel{
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:14px;
-  padding:18px;
-  background: rgba(255,255,255,.05);
-  position: sticky;
-  top: 110px; /* 跟 header 对齐 */
-}
-
-.side-panel h3{
-  margin: 0 0 10px;
-  font-size: 15px;
-  color: var(--gold);
-}
-
-.side-list{
-  list-style:none;
-  padding:0;
-  margin:0 0 18px;
-}
-
-.side-list li{
-  font-size: 13.5px;
-  color: rgba(255,255,255,.78);
-  margin-bottom: 10px;
-  line-height:1.55;
-}
-
-.side-list strong{
-  color: rgba(255,255,255,.92);
-  font-weight:600;
-}
-
-.side-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-}
-
-.side-tags span{
-  font-size:12px;
-  padding:5px 9px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.22);
-  color: rgba(255,255,255,.80);
-}
-
-/* Main panel just inherits existing styles */
-.main-panel{
-  display:flex;
-  flex-direction:column;
-  gap: 22px;
-}
-
-/* Mobile: stack */
-@media (max-width: 860px){
-  .layout-2col{
-    grid-template-columns: 1fr;
-  }
-  .side-panel{
-    position: static;
-  }
-}
-
