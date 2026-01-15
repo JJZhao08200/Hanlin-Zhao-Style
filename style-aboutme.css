@@ -381,3 +381,79 @@ footer{
 
   .t-head{ flex-direction: column; align-items: flex-start; }
 }
+
+/* ===== Two-column Murphy layout ===== */
+
+.layout-2col{
+  display:grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 26px;
+  align-items:start;
+}
+
+/* Sidebar */
+.side-panel{
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:14px;
+  padding:18px;
+  background: rgba(255,255,255,.05);
+  position: sticky;
+  top: 110px; /* 跟 header 对齐 */
+}
+
+.side-panel h3{
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: var(--gold);
+}
+
+.side-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 18px;
+}
+
+.side-list li{
+  font-size: 13.5px;
+  color: rgba(255,255,255,.78);
+  margin-bottom: 10px;
+  line-height:1.55;
+}
+
+.side-list strong{
+  color: rgba(255,255,255,.92);
+  font-weight:600;
+}
+
+.side-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.side-tags span{
+  font-size:12px;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  color: rgba(255,255,255,.80);
+}
+
+/* Main panel just inherits existing styles */
+.main-panel{
+  display:flex;
+  flex-direction:column;
+  gap: 22px;
+}
+
+/* Mobile: stack */
+@media (max-width: 860px){
+  .layout-2col{
+    grid-template-columns: 1fr;
+  }
+  .side-panel{
+    position: static;
+  }
+}
+
