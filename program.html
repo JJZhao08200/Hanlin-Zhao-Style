@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Programs - Hanlin Zhao</title>
-  <link rel="stylesheet" href="style-aboutme.css" />
+  <link rel="stylesheet" href="style-program.css" />
 </head>
 
 <body>
   <!-- ===== Header ===== -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo" />
+  <header class="site-header">
+    <div class="brand">
+      <img src="logo.png" alt="Logo" class="brand-logo" />
     </div>
 
-    <nav>
+    <nav class="site-nav">
       <ul>
         <li><a href="index.html">HELLO</a></li>
         <li><a href="about.html">PROFILE</a></li>
-        <li><a href="program.html" class="active">PROGRAMS</a></li>
+        <li><a class="active" href="program.html">PROGRAMS</a></li>
         <li><a href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
       </ul>
     </nav>
@@ -27,24 +27,26 @@
   <main>
     <!-- ===== Hero ===== -->
     <section class="hero">
-      <h1>MY PROGRAMS</h1>
-      <p>Selected projects in analytics, finance &amp; data storytelling</p>
+      <div class="hero-inner">
+        <h1>MY PROGRAMS</h1>
+        <p>Selected projects in analytics, finance &amp; data storytelling</p>
 
-      <!-- Hero Jump Buttons (scroll spy highlight) -->
-      <div class="hero-actions program-jump">
-        <a class="btn ghost jump-link" href="#google-hack">2025 Google Hackathon</a>
-        <a class="btn ghost jump-link" href="#climate-hack">2025 Climate Finance</a>
-        <a class="btn ghost jump-link" href="#learning-hack">2024 Learning Analytics</a>
+        <div class="hero-actions">
+          <a class="btn ghost" href="#google-hack">2025 Google Hackathon</a>
+          <a class="btn ghost" href="#climate-hack">2025 Climate Finance</a>
+          <a class="btn ghost" href="#learning-hack">2024 Learning Analytics</a>
+        </div>
       </div>
     </section>
 
-    <section class="about-container">
+    <!-- ===== Content ===== -->
+    <section class="container">
 
       <!-- ===== Project 1 ===== -->
-      <article class="card m-hover program-card" id="google-hack">
-        <div class="t-head">
+      <article class="card" id="google-hack">
+        <div class="meta">
           <span class="pill">Hackathon · Analytics</span>
-          <span class="date">2025</span>
+          <span class="year">2025</span>
         </div>
 
         <h2>UBC Sauder and Google Hackathon with Google Cloud Tools</h2>
@@ -52,16 +54,20 @@
           End-to-end YouTube analytics system combining APIs, ML forecasting, and interactive dashboards.
         </p>
 
-        <!-- Role / Impact (scan-friendly) -->
         <div class="ri">
-          <div class="ri-row"><span class="ri-k">My role</span><span class="ri-v">API integration · Forecasting (ARIMA/LSTM) · Dashboard build</span></div>
-          <div class="ri-row"><span class="ri-k">Impact</span><span class="ri-v">Real-time reporting + trend prediction to support growth decisions</span></div>
+          <div class="ri-row">
+            <div class="ri-k">My role</div>
+            <div class="ri-v">API integration · Forecasting (ARIMA/LSTM) · Dashboard build</div>
+          </div>
+          <div class="ri-row">
+            <div class="ri-k">Impact</div>
+            <div class="ri-v">Real-time reporting + trend prediction to support growth decisions</div>
+          </div>
         </div>
 
-        <!-- Cover Image -->
-        <img src="googlehax.jpg" alt="UBC Sauder and Google Hackathon" class="project-cover" loading="lazy" />
+        <img class="cover" src="googlehax.jpg" alt="UBC Sauder and Google Hackathon" />
 
-        <div class="stack">
+        <div class="chips">
           <span class="chip">YouTube Analytics API</span>
           <span class="chip">OAuth</span>
           <span class="chip">YouTube Data API v3</span>
@@ -70,42 +76,38 @@
           <span class="chip">Looker Studio</span>
         </div>
 
-        <p>
-          We successfully integrated the YouTube Analytics API to retrieve key metrics such as views,
-          subscriber growth, audience distribution, and traffic sources, while resolving OAuth authentication
-          challenges to ensure secure data access.
-        </p>
+        <div class="prose">
+          <p>
+            We successfully integrated the YouTube Analytics API to retrieve key metrics such as views, subscriber growth,
+            audience distribution, and traffic sources, while resolving OAuth authentication challenges to ensure secure data access.
+          </p>
+          <p>
+            Since the API only allows access to our own channel data, we leveraged YouTube Data API v3 for public statistics and applied
+            Machine Learning models, including time series forecasting (ARIMA, LSTM), to predict future trends.
+          </p>
+          <p>
+            Additionally, we integrated Looker Studio to create real-time dashboards for visualizing YouTube performance, enhancing insights
+            through interactive and data-driven reporting.
+          </p>
+          <p>
+            Moving forward, we aim to refine our ML models, automate data collection, and build an intelligent analytics system that seamlessly
+            combines API data, predictive modeling, and visualization for optimized YouTube growth strategies.
+          </p>
+        </div>
 
-        <p>
-          Since the API only allows access to our own channel data, we leveraged YouTube Data API v3 for public
-          statistics and applied Machine Learning models, including time series forecasting (ARIMA, LSTM), to
-          predict future trends.
-        </p>
-
-        <p>
-          Additionally, we integrated Looker Studio to create real-time dashboards for visualizing YouTube
-          performance, enhancing insights through interactive and data-driven reporting.
-        </p>
-
-        <p>
-          Moving forward, we aim to refine our ML models, automate data collection, and build an intelligent
-          analytics system that seamlessly combines API data, predictive modeling, and visualization for optimized
-          YouTube growth strategies.
-        </p>
-
-        <div class="hero-actions">
+        <div class="actions">
           <a class="btn ghost" href="https://jjzhao08200.github.io/Journey-to-the-west/index.html" target="_blank" rel="noopener">
             View Demo
           </a>
-          <span class="subtitle note-inline">(You can type anything for username and password)</span>
+          <span class="note">(You can type anything for username and password)</span>
         </div>
       </article>
 
       <!-- ===== Project 2 ===== -->
-      <article class="card m-hover program-card" id="climate-hack">
-        <div class="t-head">
+      <article class="card" id="climate-hack">
+        <div class="meta">
           <span class="pill">Hackathon · Climate Finance</span>
-          <span class="date">2025</span>
+          <span class="year">2025</span>
         </div>
 
         <h2>UBC Climate Innovation Challenge Hackathon</h2>
@@ -113,16 +115,20 @@
           Project finance strategy for Deep Sky — a large-scale Direct Air Capture (DAC) facility in Québec.
         </p>
 
-        <!-- Role / Impact -->
         <div class="ri">
-          <div class="ri-row"><span class="ri-k">My role</span><span class="ri-v">Project finance structuring · Risk assessment · Model assumptions &amp; DSCR logic</span></div>
-          <div class="ri-row"><span class="ri-k">Impact</span><span class="ri-v">Clear bankability narrative + financing options for decision discussions</span></div>
+          <div class="ri-row">
+            <div class="ri-k">My role</div>
+            <div class="ri-v">Project finance structuring · Risk assessment · Model assumptions &amp; DSCR logic</div>
+          </div>
+          <div class="ri-row">
+            <div class="ri-k">Impact</div>
+            <div class="ri-v">Clear bankability narrative + financing options for decision discussions</div>
+          </div>
         </div>
 
-        <!-- Cover Image -->
-        <img src="Chack.png" alt="UBC Climate Innovation Challenge Hackathon" class="project-cover" loading="lazy" />
+        <img class="cover" src="Chack.png" alt="UBC Climate Innovation Challenge Hackathon" />
 
-        <div class="stack">
+        <div class="chips">
           <span class="chip">Project Finance</span>
           <span class="chip">Offtake</span>
           <span class="chip">Carbon Markets</span>
@@ -131,29 +137,30 @@
           <span class="chip">Capital Structure</span>
         </div>
 
-        <p>
-          Over two days, I worked with an incredible team to tackle a real-world project finance challenge—structuring
-          the financing strategy for Deep Sky, a large-scale Direct Air Capture (DAC) facility in Québec.
-        </p>
+        <div class="prose">
+          <p>
+            Over two days, I worked with an incredible team to tackle a real-world project finance challenge—structuring the financing strategy
+            for Deep Sky, a large-scale Direct Air Capture (DAC) facility in Québec.
+          </p>
 
-        <ul class="checklist">
-          <li><strong>Climate Finance &amp; Offtake Agreements</strong> – Explored sustainability-linked bonds, debt structuring, and revenue stability.</li>
-          <li><strong>Carbon Markets &amp; Risk Management</strong> – Assessed the feasibility of carbon credit pricing, voluntary/compliance markets, and offtake strategies.</li>
-          <li><strong>Financial Modeling &amp; Investment Structuring</strong> – Evaluated project bankability, DSCR, and equity/debt allocation to optimize returns.</li>
-        </ul>
+          <ul class="checklist">
+            <li><strong>Climate Finance &amp; Offtake Agreements</strong> – Explored sustainability-linked bonds, debt structuring, and revenue stability.</li>
+            <li><strong>Carbon Markets &amp; Risk Management</strong> – Assessed the feasibility of carbon credit pricing, voluntary/compliance markets, and offtake strategies.</li>
+            <li><strong>Financial Modeling &amp; Investment Structuring</strong> – Evaluated project bankability, DSCR, and equity/debt allocation to optimize returns.</li>
+          </ul>
 
-        <p>
-          This experience deepened my understanding of sustainable finance, project structuring, and carbon markets,
-          reinforcing the role of finance in accelerating climate innovation. Grateful for the insights from industry experts
-          and my teammates!
-        </p>
+          <p>
+            This experience deepened my understanding of sustainable finance, project structuring, and carbon markets, reinforcing the role of finance
+            in accelerating climate innovation. Grateful for the insights from industry experts and my teammates!
+          </p>
+        </div>
       </article>
 
       <!-- ===== Project 3 ===== -->
-      <article class="card m-hover program-card" id="learning-hack">
-        <div class="t-head">
+      <article class="card" id="learning-hack">
+        <div class="meta">
           <span class="pill">Hackathon · Learning Analytics</span>
-          <span class="date">2024</span>
+          <span class="year">2024</span>
         </div>
 
         <h2>Learning Analytics Hackathon (Team HAX)</h2>
@@ -161,16 +168,20 @@
           Award-winning dashboards to improve engagement quality and reduce disengaged “spam” posts in online learning.
         </p>
 
-        <!-- Role / Impact -->
         <div class="ri">
-          <div class="ri-row"><span class="ri-k">My role</span><span class="ri-v">Metric design · Dashboard build · Data analysis (Python/Tableau) · Storytelling</span></div>
-          <div class="ri-row"><span class="ri-k">Impact</span><span class="ri-v">Won “Most Relevant to Teaching and Learning” for actionable instructor/student views</span></div>
+          <div class="ri-row">
+            <div class="ri-k">My role</div>
+            <div class="ri-v">Metric design · Dashboard build · Data analysis (Python/Tableau) · Storytelling</div>
+          </div>
+          <div class="ri-row">
+            <div class="ri-k">Impact</div>
+            <div class="ri-v">Won “Most Relevant to Teaching and Learning” for actionable instructor/student views</div>
+          </div>
         </div>
 
-        <!-- Cover Image -->
-        <img src="Lhack.png" alt="Learning Analytics Hackathon" class="project-cover" loading="lazy" />
+        <img class="cover" src="Lhack.png" alt="Learning Analytics Hackathon" />
 
-        <div class="stack">
+        <div class="chips">
           <span class="chip">Python</span>
           <span class="chip">Tableau</span>
           <span class="chip">Data Analysis</span>
@@ -178,29 +189,27 @@
           <span class="chip">Engagement Metrics</span>
         </div>
 
-        <p>
-          During the recent Learning Analytics Hackathon, I participated as part of Team HAX, where we won the
-          <strong>"Most Relevant to Teaching and Learning"</strong> award. Our project aimed to promote meaningful discussions
-          aligned with learning outcomes while reducing the number of disengaged or "spam" posts in online learning environments.
-          We proposed dashboards for both instructors and students to track engagement and ensure that discussions contributed to
-          the intended learning objectives.
-        </p>
+        <div class="prose">
+          <p>
+            During the recent Learning Analytics Hackathon, I participated as part of Team HAX, where we won the
+            <strong>"Most Relevant to Teaching and Learning"</strong> award. Our project aimed to promote meaningful discussions aligned with learning
+            outcomes while reducing the number of disengaged or "spam" posts in online learning environments. We proposed dashboards for both instructors
+            and students to track engagement and ensure that discussions contributed to the intended learning objectives.
+          </p>
 
-        <p>
-          Throughout the process, I applied various technical skills, including Python, Tableau, data analysis, and web design,
-          which were instrumental in creating the dashboards and analyzing data to provide actionable insights. These combined
-          efforts led to a solution that enhanced the overall learning experience and contributed to our success in the competition.
-        </p>
+          <p>
+            Throughout the process, I applied various technical skills, including Python, Tableau, data analysis, and web design, which were instrumental
+            in creating the dashboards and analyzing data to provide actionable insights. These combined efforts led to a solution that enhanced the overall
+            learning experience and contributed to our success in the competition.
+          </p>
+        </div>
       </article>
 
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>© 2025 Hanlin Zhao. All rights reserved.</p>
   </footer>
-
-  <!-- Scroll spy for hero buttons -->
-  <script src="program.js"></script>
 </body>
 </html>
