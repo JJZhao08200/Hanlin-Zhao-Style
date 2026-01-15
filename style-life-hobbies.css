@@ -121,7 +121,7 @@ main{ padding-top: 64px; }
       rgba(0,0,0,.28) 55%,
       rgba(0,0,0,.40) 100%
     ),
-    url("lifeback.png") center 50% / cover no-repeat;  /* ✅ 往下挪：78% 你可以微调 70~90% */
+    url("lifeback.png") center 70% / cover no-repeat;  /* ✅ 往下挪：78% 你可以微调 70~90% */
 
   border-bottom: none;        /* ✅ 关键：去掉白色缝隙来源 */
 }
@@ -134,6 +134,16 @@ main{ padding-top: 64px; }
     radial-gradient(900px 380px at 50% 25%, rgba(255,255,255,.06), rgba(0,0,0,0) 55%),
     radial-gradient(1200px 520px at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.55) 70%);
   pointer-events:none;
+}
+
+.hero{
+  position: relative;   /* ⭐ 关键：约束 ::after 的范围 */
+  overflow: hidden;     /* ⭐ 防止遮罩溢出到下面 */
+  isolation: isolate;   /* ⭐ 稳定叠层（可选但推荐） */
+}
+.hero-inner{
+  position: relative;
+  z-index: 1;
 }
 
 .hero-inner{
@@ -171,6 +181,7 @@ main{ padding-top: 64px; }
 
   opacity: .95;
 }
+
 
 
 /* ==============================
