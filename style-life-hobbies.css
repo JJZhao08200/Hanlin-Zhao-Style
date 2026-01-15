@@ -14,7 +14,7 @@
   --card2:rgba(255,255,255,.085);
 
   --radius:14px;
-  --maxw: 980px; /* a bit wider for cards */
+  --maxw: 980px;
 }
 
 *{ box-sizing:border-box; }
@@ -46,7 +46,6 @@ body{
     );
 }
 
-/* Make images behave */
 img{ max-width:100%; height:auto; display:block; }
 
 /* ==============================
@@ -109,13 +108,12 @@ img{ max-width:100%; height:auto; display:block; }
   background: rgba(255,255,255,.06);
 }
 
-/* add top spacing to avoid header overlap */
 main{
   padding-top: 64px;
 }
 
 /* ==============================
-   Hero (Life & Hobbies)
+   Hero
 ============================== */
 .hero{
   height:320px;
@@ -176,7 +174,7 @@ main{
 }
 
 /* ==============================
-   Hobby Cards (gallery)
+   Hobby Cards
 ============================== */
 .hobby-card{
   display:grid;
@@ -215,7 +213,6 @@ main{
   display:block;
 }
 
-/* tasteful image hover (desktop only) */
 @media (hover: hover) and (pointer: fine){
   .hobby-img{
     transition: transform .22s ease, filter .22s ease;
@@ -279,7 +276,6 @@ main{
 
 .poem p:last-child{ margin-bottom: 0; }
 
-/* Chips */
 .chips{
   display:flex;
   flex-wrap:wrap;
