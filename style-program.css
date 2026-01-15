@@ -244,19 +244,26 @@ main{ padding-bottom:36px; }
 /* ==============================
    Project cover image (KEY PART)
 ============================== */
+/* Programs cover image — show full image (no crop), keep it tasteful */
 .project-cover{
-  width:100%;
-  height:clamp(180px, 24vw, 260px); /* ✅ 不再巨大 */
-  object-fit:cover;
-  border-radius:12px;
-  margin:10px 0 12px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(255,255,255,.03);
+  width: 100%;
+  height: auto;                 /* ✅ 不再强制高度 */
+  max-height: 320px;            /* ✅ 控制不要太大 */
+  object-fit: contain;          /* ✅ 完整显示，不裁切 */
+  object-position: center;
+  display: block;
+  border-radius: 12px;
+  margin: 10px 0 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);  /* ✅ contain 时两侧留黑更自然 */
 }
 
-@media (max-width:640px){
-  .project-cover{ height:180px; }
+@media (max-width: 640px){
+  .project-cover{
+    max-height: 220px;
+  }
 }
+
 
 /* ==============================
    Chips
