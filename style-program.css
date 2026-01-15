@@ -1,171 +1,313 @@
-/* 全局样式，保持黑金主题 */
-body {
-    background-color: #000; /* 黑色背景 */
-    color: white;
-    font-family: 'Noto Sans SC', sans-serif;
-    margin: 0;
-    text-align: center;
+/* ==============================
+   Root variables & base
+============================== */
+:root{
+  --bg:#000;
+  --text:#fff;
+  --muted:rgba(255,255,255,.72);
+  --line:rgba(255,255,255,.12);
+  --gold:#ffcc00;
+  --card:rgba(255,255,255,.06);
+  --card2:rgba(255,255,255,.08);
+  --radius:14px;
+  --maxw:980px;
 }
 
-/* 让 program 容器居中 */
-.program-container {
-    max-width: 1600px;
-    margin: auto;
-    padding: 80px 20px;
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+               Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.75;
+  letter-spacing:.2px;
+  text-align:center;
 }
 
-/* 标题样式，使用金色字体 */
-.section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffcc00; /* 金色 */
-    text-align: center;
-    margin-bottom: 20px;
+/* ==============================
+   Header / Nav
+============================== */
+header{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 30px;
+  background:rgba(0,0,0,.85);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* 统一时间线风格 */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    padding-left: 20px;
-    border-left: 3px solid #ffcc00; /* 金色时间线 */
+.logo img{ height:44px; }
+
+nav{
+  flex-grow:1;
+  display:flex;
+  justify-content:center;
 }
 
-/* 时间线卡片样式 */
-.timeline-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.1); /* 透明度调整 */
-    padding: 15px;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-    width: 90%;
+nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  gap:30px;
 }
 
-/* 图片固定大小 */
-.timeline-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
-    border: 2px solid #ffcc00;
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:1.05rem;
+  opacity:.9;
+  transition:color .18s ease, opacity .18s ease;
 }
 
-/* 文字内容 */
-.timeline-content {
-    text-align: left;
-    color: white;
+nav ul li a:hover,
+nav ul li a.active{
+  color:var(--gold);
+  opacity:1;
 }
 
-/* 鼠标悬停效果 */
-.timeline-item:hover {
-    transform: scale(1.05);
-    background: rgba(255, 204, 0, 0.2);
+/* ==============================
+   Hero
+============================== */
+.hero{
+  height:320px;
+  padding-top:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:url("BP.png") center / cover no-repeat;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-/* 修正导航栏 */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    padding: 15px 0;
-    z-index: 1000;
+.hero h1{
+  margin:0;
+  font-size:2.6rem;
+  font-weight:800;
+  color:var(--gold);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+.hero p{
+  margin:8px 0 0;
+  font-size:1.15rem;
+  color:rgba(255,255,255,.9);
 }
 
-nav ul li a {
-    color: #ffcc00;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease-in-out;
+.hero-actions{
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
-nav ul li a:hover {
-    color: #ff6600;
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  padding:9px 14px;
+  border-radius:999px;
+  font-size:14px;
+  text-decoration:none;
+  border:1px solid rgba(255,255,255,.18);
+  color:rgba(255,255,255,.95);
+  background:rgba(0,0,0,.25);
+  transition:transform .18s ease, border-color .18s ease, background .18s ease;
 }
 
-/* ===== Programs page enhancements ===== */
-
-/* Unified cover image ratio */
-.project-cover{
-  width: 100%;
-  height: 360px;           /* desktop cover height */
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-  margin: 10px 0 10px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+.btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,204,0,.7);
+  background:rgba(255,255,255,.06);
 }
 
-@media (max-width: 640px){
-  .project-cover{ height: 220px; }
+.btn.ghost{
+  border-color:rgba(255,255,255,.18);
 }
 
-/* Role / Impact block */
+/* Scroll spy active */
+.program-jump .jump-link.is-active{
+  border-color:rgba(255,204,0,.95);
+  background:rgba(255,255,255,.08);
+}
+
+/* ==============================
+   Main container
+============================== */
+main{ padding-bottom:36px; }
+
+.about-container{
+  max-width:var(--maxw);
+  margin:28px auto 0;
+  padding:26px;
+  text-align:left;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+}
+
+/* ==============================
+   Card
+============================== */
+.card{
+  margin-bottom:28px;
+  padding:22px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.10);
+  background:var(--card);
+}
+
+.m-hover{
+  transition:transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.m-hover:hover{
+  transform:translateY(-2px);
+  background:var(--card2);
+  border-color:rgba(255,255,255,.18);
+}
+
+.card h2{
+  margin:6px 0 6px;
+  font-size:1.5rem;
+  color:var(--gold);
+}
+
+.subtitle{
+  margin:0 0 10px;
+  font-size:.95rem;
+  color:rgba(255,255,255,.78);
+}
+
+/* ==============================
+   Meta header
+============================== */
+.t-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:6px;
+}
+
+.pill{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.22);
+  color:rgba(255,255,255,.78);
+}
+
+.date{
+  font-size:12px;
+  font-weight:700;
+  color:rgba(255,204,0,.9);
+}
+
+/* ==============================
+   Role / Impact block
+============================== */
 .ri{
-  margin: 14px 0 10px;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.18);
+  margin:12px 0 10px;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(0,0,0,.18);
 }
 
 .ri-row{
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin: 6px 0;
+  display:flex;
+  gap:12px;
+  margin:6px 0;
 }
 
 .ri-k{
-  flex: 0 0 78px;
-  font-size: 12px;
-  letter-spacing: .2px;
-  color: rgba(255,204,0,.92);
-  text-transform: uppercase;
+  flex:0 0 72px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.3px;
+  color:rgba(255,204,0,.9);
 }
 
 .ri-v{
-  font-size: 13.5px;
-  color: rgba(255,255,255,.84);
-  line-height: 1.55;
+  font-size:13.5px;
+  color:rgba(255,255,255,.85);
 }
 
-/* Demo note inline */
-.note-inline{
-  color: rgba(255,255,255,.70);
-  font-size: 13px;
+/* ==============================
+   Project cover image (KEY PART)
+============================== */
+.project-cover{
+  width:100%;
+  height:clamp(180px, 24vw, 260px); /* ✅ 不再巨大 */
+  object-fit:cover;
+  border-radius:12px;
+  margin:10px 0 12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
 }
 
-/* Checklist styling (replaces ✔️ paragraphs) */
+@media (max-width:640px){
+  .project-cover{ height:180px; }
+}
+
+/* ==============================
+   Chips
+============================== */
+.stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:12px;
+}
+
+.chip{
+  font-size:12px;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.22);
+  color:rgba(255,255,255,.82);
+}
+
+/* ==============================
+   Checklist
+============================== */
 .checklist{
-  margin: 10px 0 12px;
-  padding-left: 18px;
-  color: rgba(255,255,255,.84);
+  margin:10px 0 12px;
+  padding-left:18px;
 }
 
 .checklist li{
-  margin: 8px 0;
-  line-height: 1.6;
+  margin:6px 0;
+  color:rgba(255,255,255,.84);
 }
 
-/* Scroll-spy active state for hero jump buttons */
-.program-jump .jump-link.is-active{
-  border-color: rgba(255,204,0,.95);
-  background: rgba(255,255,255,.08);
-  transform: translateY(-1px);
+/* ==============================
+   Footer
+============================== */
+footer{
+  margin-top:40px;
+  padding:22px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.8);
+  text-align:center;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width:640px){
+  nav ul{ gap:16px; }
+  nav ul li a{ font-size:.95rem; }
+  .hero h1{ font-size:2.2rem; }
+  .about-container{ padding:18px; }
+  .card{ padding:18px; }
 }
