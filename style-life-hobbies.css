@@ -1,20 +1,23 @@
 /* ==============================
-   Life & Hobbies — Murphy-style gallery
-   Text content unchanged; layout only
+   Life & Hobbies — v4 (Premium)
+   Text content unchanged; layout + visual only
 ============================== */
 
 :root{
   --bg:#000;
   --text:#fff;
   --muted:rgba(255,255,255,.72);
-  --line:rgba(255,255,255,.12);
+  --line:rgba(255,255,255,.10);
   --gold:#ffcc00;
 
-  --card:rgba(255,255,255,.06);
+  --card:rgba(255,255,255,.055);
   --card2:rgba(255,255,255,.085);
 
-  --radius:14px;
-  --maxw: 980px;
+  --radius:16px;
+  --maxw: 1040px;
+
+  --shadow: 0 18px 70px rgba(0,0,0,.50);
+  --shadow2: 0 26px 90px rgba(0,0,0,.62);
 }
 
 *{ box-sizing:border-box; }
@@ -33,23 +36,15 @@ body{
   letter-spacing:.2px;
 
   background:
-    radial-gradient(1200px 700px at 50% 120px,
-      rgba(255,255,255,.04),
-      rgba(0,0,0,0) 60%
-    ),
-    linear-gradient(to right,
-      #000 0%,
-      #000 18%,
-      #050505 50%,
-      #000 82%,
-      #000 100%
-    );
+    radial-gradient(1200px 700px at 50% 120px, rgba(255,255,255,.05), rgba(0,0,0,0) 60%),
+    radial-gradient(900px 500px at 18% 520px, rgba(255,204,0,.06), rgba(0,0,0,0) 55%),
+    linear-gradient(to right, #000 0%, #000 18%, #050505 50%, #000 82%, #000 100%);
 }
 
 img{ max-width:100%; height:auto; display:block; }
 
 /* ==============================
-   Header / Nav
+   Header / Nav (cleaner + better spacing)
 ============================== */
 .site-header{
   position:fixed;
@@ -61,18 +56,14 @@ img{ max-width:100%; height:auto; display:block; }
   align-items:center;
   justify-content:space-between;
 
-  padding:10px 26px;
-  background:rgba(0,0,0,.86);
+  padding:10px 28px;
+  background:rgba(0,0,0,.72);
   border-bottom:1px solid rgba(255,255,255,.10);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .brand-link{ display:inline-flex; align-items:center; }
-
-.brand-logo{
-  height:44px;
-  width:auto;
-}
+.brand-logo{ height:44px; width:auto; }
 
 .site-nav{
   flex:1;
@@ -84,22 +75,23 @@ img{ max-width:100%; height:auto; display:block; }
   list-style:none;
   padding:0; margin:0;
   display:flex;
-  gap:30px;
+  gap:28px;
 }
 
 .site-nav a{
   color:#fff;
   text-decoration:none;
-  font-size:1.05rem;
-  opacity:.9;
+  font-size:1.03rem;
+  opacity:.86;
   padding:8px 10px;
-  border-radius: 10px;
-  transition: color .18s ease, opacity .18s ease, background .18s ease;
+  border-radius: 12px;
+  transition: color .18s ease, opacity .18s ease, background .18s ease, transform .18s ease;
 }
 
 .site-nav a:hover{
   background: rgba(255,255,255,.06);
   opacity:1;
+  transform: translateY(-1px);
 }
 
 .site-nav a.active{
@@ -108,99 +100,120 @@ img{ max-width:100%; height:auto; display:block; }
   background: rgba(255,255,255,.06);
 }
 
-main{
-  padding-top: 64px;
-}
+/* prevent header overlap */
+main{ padding-top: 64px; }
 
 /* ==============================
-   Hero
+   Hero (more cinematic)
 ============================== */
 .hero{
-  height:320px;
+  height: 360px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  position: relative;
+  overflow:hidden;
 
   background:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.45) 0%,
-      rgba(0,0,0,.60) 60%,
-      rgba(0,0,0,.78) 100%
-    ),
+    linear-gradient(to bottom, rgba(0,0,0,.30) 0%, rgba(0,0,0,.65) 55%, rgba(0,0,0,.86) 100%),
     url("BP.png") center/cover no-repeat;
 
   border-bottom:1px solid rgba(255,255,255,.10);
 }
 
+.hero::after{
+  /* subtle film grain + vignette */
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(900px 380px at 50% 25%, rgba(255,255,255,.06), rgba(0,0,0,0) 55%),
+    radial-gradient(1200px 520px at 50% 50%, rgba(0,0,0,0), rgba(0,0,0,.55) 70%);
+  pointer-events:none;
+}
+
 .hero-inner{
+  position: relative;
+  z-index: 1;
   padding: 0 18px;
-  max-width: 1000px;
+  max-width: 980px;
 }
 
 .hero h1{
   margin:0;
-  font-size:2.65rem;
-  font-weight:850;
+  font-size:2.85rem;
+  font-weight: 900;
   color:var(--gold);
-  letter-spacing:.7px;
-  text-shadow: 0 10px 30px rgba(0,0,0,.45);
+  letter-spacing:.9px;
+  text-shadow: 0 16px 40px rgba(0,0,0,.55);
 }
 
 .hero p{
   margin:10px 0 0;
   color:rgba(255,255,255,.92);
-  text-shadow: 0 10px 30px rgba(0,0,0,.45);
+  font-size: 1.02rem;
+  text-shadow: 0 16px 40px rgba(0,0,0,.55);
 }
 
 /* ==============================
-   Container
+   Container (stronger “center column”)
 ============================== */
 .container{
   max-width: var(--maxw);
   margin: 26px auto 0;
-  padding: 24px;
+  padding: 26px;
   border-radius: calc(var(--radius) + 2px);
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
+  background: rgba(255,255,255,.035);
+  box-shadow: 0 16px 60px rgba(0,0,0,.35);
 }
 
 .section-title{
-  margin: 0 0 16px;
-  font-size: 1.45rem;
+  margin: 0 0 18px;
+  font-size: 1.55rem;
   letter-spacing: .35px;
   color: var(--gold);
 }
 
 /* ==============================
-   Hobby Cards
+   Cards (more premium)
 ============================== */
 .hobby-card{
   display:grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: 18px;
   align-items:start;
 
   padding: 18px;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.10);
-  background: var(--card);
+  border: 1px solid rgba(255,255,255,.11);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.045));
   margin-bottom: 22px;
 
-  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  box-shadow: var(--shadow);
   transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
 }
 
 .hobby-card:hover{
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: rgba(255,255,255,.18);
-  background: var(--card2);
-  box-shadow: 0 22px 70px rgba(0,0,0,.42);
+  background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.055));
+  box-shadow: var(--shadow2);
+}
+
+/* optional: alternating layout (even cards swap) */
+.hobby-card:nth-of-type(even){
+  grid-template-columns: 1fr 360px;
+}
+.hobby-card:nth-of-type(even) .hobby-media{
+  order: 2;
+}
+.hobby-card:nth-of-type(even) .hobby-body{
+  order: 1;
 }
 
 .hobby-media{
-  border-radius: 12px;
+  border-radius: 14px;
   overflow:hidden;
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(0,0,0,.18);
@@ -208,18 +221,16 @@ main{
 
 .hobby-img{
   width:100%;
-  height: 230px;
+  height: 235px;
   object-fit: cover;
-  display:block;
 }
 
+/* subtle zoom only on desktop */
 @media (hover: hover) and (pointer: fine){
-  .hobby-img{
-    transition: transform .22s ease, filter .22s ease;
-  }
+  .hobby-img{ transition: transform .25s ease, filter .25s ease; }
   .hobby-card:hover .hobby-img{
-    transform: scale(1.02);
-    filter: saturate(1.05) contrast(1.03);
+    transform: scale(1.03);
+    filter: saturate(1.06) contrast(1.05);
   }
 }
 
@@ -230,66 +241,73 @@ main{
   align-items:flex-start;
   justify-content:space-between;
   gap: 12px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .hobby-title{
   margin:0;
-  font-size: 1.28rem;
-  color: rgba(255,255,255,.96);
+  font-size: 1.32rem;
+  font-weight: 800;
+  color: rgba(255,255,255,.97);
 }
 
 .badge{
   flex: 0 0 auto;
   font-size:12px;
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.22);
-  color: rgba(255,255,255,.80);
+  background: rgba(0,0,0,.25);
+  color: rgba(255,255,255,.82);
 }
 
 .tagline{
   margin: 0 0 12px;
   color: rgba(255,255,255,.78);
-  font-size: .96rem;
+  font-size: .98rem;
+}
+
+.prose{
+  max-width: 62ch; /* better reading line width */
 }
 
 .prose p{
   margin: 0 0 12px;
-  color: rgba(255,255,255,.86);
+  color: rgba(255,255,255,.88);
 }
 
+/* poem block stronger contrast */
 .poem{
   margin-top: 10px;
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 14px 14px;
+  border-radius: 14px;
   border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.20);
+  background: rgba(0,0,0,.24);
 }
 
 .poem p{
   margin: 0 0 6px;
-  color: rgba(255,255,255,.92);
+  color: rgba(255,255,255,.94);
   letter-spacing: .45px;
 }
 
 .poem p:last-child{ margin-bottom: 0; }
 
+/* chips look like UI tokens */
 .chips{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .chip{
   font-size:12px;
-  padding:5px 9px;
+  padding: 6px 10px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.22);
-  color: rgba(255,255,255,.84);
+  background: rgba(0,0,0,.24);
+  color: rgba(255,255,255,.86);
 }
 
 /* ==============================
@@ -306,7 +324,7 @@ main{
 /* ==============================
    Responsive
 ============================== */
-@media (max-width: 980px){
+@media (max-width: 1100px){
   .container{ margin-left: 14px; margin-right: 14px; }
 }
 
@@ -314,23 +332,27 @@ main{
   .hobby-card{
     grid-template-columns: 1fr;
   }
+  .hobby-card:nth-of-type(even){
+    grid-template-columns: 1fr;
+  }
+  .hobby-card:nth-of-type(even) .hobby-media{
+    order: 0;
+  }
   .hobby-img{
     height: 260px;
   }
+  .prose{ max-width: 100%; }
 }
 
 @media (max-width: 640px){
-  .site-header{
-    padding: 10px 14px;
-  }
-
+  .site-header{ padding: 10px 14px; }
   .site-nav ul{ gap:12px; }
   .site-nav a{ font-size:.95rem; padding: 8px 8px; }
 
-  .hero{ height:340px; }
-  .hero h1{ font-size:2.2rem; }
+  .hero{ height: 360px; }
+  .hero h1{ font-size:2.25rem; }
 
   .container{ padding: 18px; }
   .hobby-card{ padding: 16px; }
-  .hobby-img{ height: 230px; }
+  .hobby-img{ height: 235px; }
 }
