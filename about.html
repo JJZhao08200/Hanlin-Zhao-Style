@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <!-- ===== Header ===== -->
   <header>
     <div class="logo">
       <img src="logo.png" alt="Logo" />
@@ -24,44 +25,54 @@
   </header>
 
   <main>
+    <!-- ===== Hero ===== -->
     <section class="hero">
       <h1>ABOUT ME</h1>
-      <p>NICE TO MEET YOU!😊</p>
+      <p>NICE TO MEET YOU! 😊</p>
 
       <div class="hero-actions">
-        <!-- 你有简历 PDF 的话，把 href 改成 resume.pdf -->
+        <!-- 如果你有简历 PDF，把 href 改成 resume.pdf -->
         <a class="btn" href="#" onclick="return false;">Download Resume</a>
         <a class="btn ghost" href="mailto:hanlinzhaojj@gmail.com">Email Me</a>
       </div>
     </section>
 
+    <!-- ===== Content ===== -->
     <section class="about-container layout-2col">
+
       <!-- ===== Sidebar ===== -->
       <aside class="side-panel m-hover">
-        <h3>At a Glance</h3>
 
+        <!-- Jump Nav -->
+        <h3>Jump</h3>
+        <div class="side-nav">
+          <a href="#profile">Profile</a>
+          <a href="#skills">Skills</a>
+          <a href="#journey">My Journey</a>
+        </div>
+
+        <!-- At a Glance -->
+        <h3>At a Glance</h3>
         <ul class="side-list">
           <li>
             <strong>Focus</strong><br />
             Data &amp; Finance Analytics
           </li>
-
           <li>
             <strong>Roles</strong><br />
             FP&amp;A / Ops / BI Analyst
           </li>
-
           <li>
             <strong>Location</strong><br />
             Vancouver, Canada
           </li>
-
           <li>
             <strong>Status</strong><br />
             Open to opportunities
           </li>
         </ul>
 
+        <!-- Core Skills -->
         <h3>Core Skills</h3>
         <div class="side-tags">
           <span>Cost analysis</span>
@@ -72,19 +83,21 @@
           <span>Stakeholder comms</span>
         </div>
 
+        <!-- CTA -->
         <div class="side-cta">
           <a class="btn full" href="mailto:hanlinzhaojj@gmail.com">Contact</a>
-          <!-- 如果你有 LinkedIn：把 # 换成你的链接 -->
+          <a class="btn ghost full" href="program.html">View Projects</a>
           <a class="btn ghost full" href="#" onclick="return false;">LinkedIn</a>
         </div>
       </aside>
 
-      <!-- ===== Main content ===== -->
+      <!-- ===== Main Panel ===== -->
       <div class="main-panel">
-        <!-- Profile Card -->
-        <div class="card m-hover">
+
+        <!-- ===== Profile ===== -->
+        <div class="card m-hover" id="profile">
           <div class="card-head">
-            <h2>I am Hanlin Zhao👋</h2>
+            <h2>I am Hanlin Zhao 👋</h2>
 
             <div class="role-tags">
               <span class="tag">Data Analyst</span>
@@ -119,7 +132,7 @@
               creativity and analytical rigor to bring innovative solutions to the table.
             </p>
 
-            <div class="stack">
+            <div class="stack" id="skills">
               <span class="chip">Python</span>
               <span class="chip">SQL</span>
               <span class="chip">Tableau</span>
@@ -129,12 +142,13 @@
           </div>
         </div>
 
-        <!-- Timeline -->
+        <!-- ===== Timeline ===== -->
         <div class="timeline-wrap">
-          <h2 class="section-title">My Journey</h2>
+          <h2 class="section-title" id="journey">My Journey</h2>
 
           <div class="timeline">
-            <div class="timeline-item m-hover">
+
+            <div class="timeline-item m-hover" role="button" tabindex="0">
               <div class="t-head">
                 <span class="date">2025 July – October</span>
                 <span class="pill">Work</span>
@@ -143,14 +157,14 @@
                 <div class="t-title">Industry Business Analyst Intern</div>
                 <div class="t-sub">IAV GmbH Ingenieurgesellschaft Auto und Verkehr</div>
                 <div class="t-keywords">
-                  <span class="kw">Cost analysis</span>
-                  <span class="kw">KPI reporting</span>
+                  <span class="kw">Market analysis</span>
+                  <span class="kw">Finance Analysis</span>
                   <span class="kw">Dashboarding</span>
                 </div>
               </div>
             </div>
 
-            <div class="timeline-item m-hover">
+            <div class="timeline-item m-hover" role="button" tabindex="0">
               <div class="t-head">
                 <span class="date">2025 May – July</span>
                 <span class="pill">Work</span>
@@ -159,14 +173,14 @@
                 <div class="t-title">Industry Project Consultant Intern</div>
                 <div class="t-sub">Redteam Projects Inc.</div>
                 <div class="t-keywords">
-                  <span class="kw">Ops analytics</span>
-                  <span class="kw">Process improvement</span>
-                  <span class="kw">Client delivery</span>
+                  <span class="kw">KPI Reporting</span>
+                  <span class="kw">Project Management</span>
+                  <span class="kw">Cost Analysis</span>
                 </div>
               </div>
             </div>
 
-            <div class="timeline-item m-hover">
+            <div class="timeline-item m-hover" role="button" tabindex="0">
               <div class="t-head">
                 <span class="date">2024 – 2025</span>
                 <span class="pill">Education</span>
@@ -182,7 +196,7 @@
               </div>
             </div>
 
-            <div class="timeline-item m-hover">
+            <div class="timeline-item m-hover" role="button" tabindex="0">
               <div class="t-head">
                 <span class="date">2020 – 2024</span>
                 <span class="pill">Education</span>
@@ -193,10 +207,11 @@
                 <div class="t-keywords">
                   <span class="kw">Financial accounting</span>
                   <span class="kw">Management accounting</span>
-                  <span class="kw">Finance basics</span>
+                  <span class="kw">Finance</span>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -207,5 +222,8 @@
   <footer>
     <p>© 2025 Hanlin Zhao. All rights reserved.</p>
   </footer>
+
+  <!-- ===== JS ===== -->
+  <script src="about.js"></script>
 </body>
 </html>
