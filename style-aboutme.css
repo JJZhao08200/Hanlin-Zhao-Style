@@ -463,3 +463,60 @@ footer{
 
   .t-head{ flex-direction: column; align-items: flex-start; }
 }
+
+/* ===== Jump nav ===== */
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px; /* 避免被 fixed header 遮住 */
+}
+
+.side-nav{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin: 8px 0 18px;
+}
+
+.side-nav a{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.20);
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  font-size: 13px;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.side-nav a:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,204,0,.35);
+  background: rgba(255,255,255,.06);
+}
+
+/* ===== Timeline mobile expand behavior ===== */
+/* 桌面：默认隐藏，hover 显示（你已有） */
+/* 手机：默认显示关键词，或点击展开（二选一，我给你“点击展开”版本） */
+
+@media (hover: none){
+  /* 在触摸设备上，默认不靠 hover */
+  .t-keywords{
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  /* 点击后展开 */
+  .timeline-item.is-open .t-keywords{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* 给触摸设备提示：整条可点 */
+  .timeline-item{
+    cursor: pointer;
+  }
+  .timeline-item:active{
+    transform: translateY(-1px);
+  }
+}
