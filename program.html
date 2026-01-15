@@ -1,67 +1,201 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs - Hanlin Zhao</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style-program.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programs - Hanlin Zhao</title>
+  <link rel="stylesheet" href="style-aboutme.css" />
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">HELLO</a></li>
-                <li><a href="about.html">PROFILE</a></li>
-                <li><a href="program.html">PROGRAMS</a></li>
-                <li><a href="life-hobbies.html">LIFE & HOBBIES</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
 
-    <main>
-        <section class="program-container">
-            <h2 class="section-title">MY PROGRAMS</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <img src="googlehax.jpg" alt="Research" class="timeline-image">
-                    <div class="timeline-content">
-                        <h3>UBC Sauder and Google Hackathon with Google Cloud Tools - 2025</h3>
-                        <p>We successfully integrated the YouTube Analytics API to retrieve key metrics such as views, subscriber growth, audience distribution, and traffic sources, while resolving OAuth authentication challenges to ensure secure data access. </p>
-                        <p>Since the API only allows access to our own channel data, we leveraged YouTube Data API v3 for public statistics and applied Machine Learning models, including time series forecasting (ARIMA, LSTM), to predict future trends.</p>
-                        <p>Additionally, we integrated Looker Studio to create real-time dashboards for visualizing YouTube performance, enhancing insights through interactive and data-driven reporting. </p>
-                        <p>Moving forward, we aim to refine our ML models, automate data collection, and build an intelligent analytics system that seamlessly combines API data, predictive modeling, and visualization for optimized YouTube growth strategies. </p>
-                        <p>Explore our website and dashboard(You can type anything for username and password): <a href="https://jjzhao08200.github.io/Journey-to-the-west/index.html" target="_blank">Click here to visit</a></p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <img src="Chack.png" alt="Hackathon" class="timeline-image">
-                    <div class="timeline-content">
-                        <h3>UBC Climate Innovation Challenge Hackathon - 2025</h3>
-                        <p>Over two days, I worked with an incredible team to tackle a real-world project finance challenge—structuring the financing strategy for Deep Sky, a large-scale Direct Air Capture (DAC) facility in Québec.</p>
-                        <p>✔️ Climate Finance & Offtake Agreements – Explored sustainability-linked bonds, debt structuring, and revenue stability.</p>
-                        <p>✔️ Carbon Markets & Risk Management – Assessed the feasibility of carbon credit pricing, voluntary/compliance markets, and offtake strategies.</p>
-                        <p>✔️ Financial Modeling & Investment Structuring – Evaluated project bankability, DSCR, and equity/debt allocation to optimize returns.</p>
-                        <p>This experience deepened my understanding of sustainable finance, project structuring, and carbon markets, reinforcing the role of finance in accelerating climate innovation. Grateful for the insights from industry experts and my teammates!</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <img src="Lhack.png" alt="Internship" class="timeline-image">
-                    <div class="timeline-content">
-                        <h3>Learning Analytics Hackathon - 2024</h3>
-                        <p>During the recent Learning Analytics Hackathon, I participated as part of Team HAX, where we won the "Most Relevant to Teaching and Learning" award. Our project aimed to promote meaningful discussions aligned with learning outcomes while reducing the number of disengaged or "spam" posts in online learning environments. We proposed dashboards for both instructors and students to track engagement and ensure that discussions contributed to the intended learning objectives.
-</p>
-                        <p>Throughout the process, I applied various technical skills, including Python, Tableau, data analysis, and web design, which were instrumental in creating the dashboards and analyzing data to provide actionable insights. These combined efforts led to a solution that enhanced the overall learning experience and contributed to our success in the competition.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <nav>
+      <ul>
+        <li><a href="index.html">HELLO</a></li>
+        <li><a href="about.html">PROFILE</a></li>
+        <li><a href="program.html" class="active">PROGRAMS</a></li>
+        <li><a href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2025 Hanlin Zhao. All rights reserved.</p>
-    </footer>
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <h1>MY PROGRAMS</h1>
+      <p>Selected projects in analytics, finance &amp; data storytelling</p>
+
+      <div class="hero-actions">
+        <a class="btn ghost" href="#google-hack">2025 Google Hackathon</a>
+        <a class="btn ghost" href="#climate-hack">2025 Climate Finance</a>
+        <a class="btn ghost" href="#learning-hack">2024 Learning Analytics</a>
+      </div>
+    </section>
+
+    <section class="about-container">
+      <!-- ===== Project 1 ===== -->
+      <div class="card m-hover" id="google-hack">
+        <div class="t-head">
+          <span class="pill">Hackathon · Analytics</span>
+          <span class="date">2025</span>
+        </div>
+
+        <h2>UBC Sauder and Google Hackathon with Google Cloud Tools</h2>
+        <p class="subtitle">
+          End-to-end YouTube analytics system combining APIs, ML forecasting, and interactive dashboards.
+        </p>
+
+        <!-- Cover Image -->
+        <img src="googlehax.jpg" alt="UBC Sauder and Google Hackathon" class="project-cover" />
+
+        <div class="stack">
+          <span class="chip">YouTube Analytics API</span>
+          <span class="chip">OAuth</span>
+          <span class="chip">YouTube Data API v3</span>
+          <span class="chip">ARIMA</span>
+          <span class="chip">LSTM</span>
+          <span class="chip">Looker Studio</span>
+        </div>
+
+        <p>
+          We successfully integrated the YouTube Analytics API to retrieve key metrics such as views,
+          subscriber growth, audience distribution, and traffic sources, while resolving OAuth authentication
+          challenges to ensure secure data access.
+        </p>
+
+        <p>
+          Since the API only allows access to our own channel data, we leveraged YouTube Data API v3 for public
+          statistics and applied Machine Learning models, including time series forecasting (ARIMA, LSTM), to
+          predict future trends.
+        </p>
+
+        <p>
+          Additionally, we integrated Looker Studio to create real-time dashboards for visualizing YouTube
+          performance, enhancing insights through interactive and data-driven reporting.
+        </p>
+
+        <p>
+          Moving forward, we aim to refine our ML models, automate data collection, and build an intelligent
+          analytics system that seamlessly combines API data, predictive modeling, and visualization for optimized
+          YouTube growth strategies.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn ghost" href="https://jjzhao08200.github.io/Journey-to-the-west/index.html" target="_blank">
+            View Demo
+          </a>
+          <span class="subtitle" style="margin:0;">
+            (You can type anything for username and password)
+          </span>
+        </div>
+      </div>
+
+      <!-- ===== Project 2 ===== -->
+      <div class="card m-hover" id="climate-hack">
+        <div class="t-head">
+          <span class="pill">Hackathon · Climate Finance</span>
+          <span class="date">2025</span>
+        </div>
+
+        <h2>UBC Climate Innovation Challenge Hackathon</h2>
+        <p class="subtitle">
+          Project finance strategy for Deep Sky — a large-scale Direct Air Capture (DAC) facility in Québec.
+        </p>
+
+        <!-- Cover Image -->
+        <img src="Chack.png" alt="UBC Climate Innovation Challenge Hackathon" class="project-cover" />
+
+        <div class="stack">
+          <span class="chip">Project Finance</span>
+          <span class="chip">Offtake</span>
+          <span class="chip">Carbon Markets</span>
+          <span class="chip">Risk Management</span>
+          <span class="chip">DSCR</span>
+          <span class="chip">Capital Structure</span>
+        </div>
+
+        <p>
+          Over two days, I worked with an incredible team to tackle a real-world project finance challenge—structuring
+          the financing strategy for Deep Sky, a large-scale Direct Air Capture (DAC) facility in Québec.
+        </p>
+
+        <p>✔️ Climate Finance &amp; Offtake Agreements – Explored sustainability-linked bonds, debt structuring, and revenue stability.</p>
+        <p>✔️ Carbon Markets &amp; Risk Management – Assessed the feasibility of carbon credit pricing, voluntary/compliance markets, and offtake strategies.</p>
+        <p>✔️ Financial Modeling &amp; Investment Structuring – Evaluated project bankability, DSCR, and equity/debt allocation to optimize returns.</p>
+
+        <p>
+          This experience deepened my understanding of sustainable finance, project structuring, and carbon markets,
+          reinforcing the role of finance in accelerating climate innovation. Grateful for the insights from industry experts
+          and my teammates!
+        </p>
+      </div>
+
+      <!-- ===== Project 3 ===== -->
+      <div class="card m-hover" id="learning-hack">
+        <div class="t-head">
+          <span class="pill">Hackathon · Learning Analytics</span>
+          <span class="date">2024</span>
+        </div>
+
+        <h2>Learning Analytics Hackathon (Team HAX)</h2>
+        <p class="subtitle">
+          Award-winning dashboards to improve engagement quality and reduce disengaged “spam” posts in online learning.
+        </p>
+
+        <!-- Cover Image -->
+        <img src="Lhack.png" alt="Learning Analytics Hackathon" class="project-cover" />
+
+        <div class="stack">
+          <span class="chip">Python</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">Data Analysis</span>
+          <span class="chip">Web Design</span>
+          <span class="chip">Engagement Metrics</span>
+        </div>
+
+        <p>
+          During the recent Learning Analytics Hackathon, I participated as part of Team HAX, where we won the
+          <strong>"Most Relevant to Teaching and Learning"</strong> award. Our project aimed to promote meaningful discussions
+          aligned with learning outcomes while reducing the number of disengaged or "spam" posts in online learning environments.
+          We proposed dashboards for both instructors and students to track engagement and ensure that discussions contributed to
+          the intended learning objectives.
+        </p>
+
+        <p>
+          Throughout the process, I applied various technical skills, including Python, Tableau, data analysis, and web design,
+          which were instrumental in creating the dashboards and analyzing data to provide actionable insights. These combined
+          efforts led to a solution that enhanced the overall learning experience and contributed to our success in the competition.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hanlin Zhao. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== Small CSS patch (only for this page) ===== -->
+  <style>
+    /* Cover image style for program cards */
+    .project-cover{
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      margin: 14px 0 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    /* Make hero chips wrap nicely on small screens */
+    @media (max-width: 640px){
+      .hero-actions{ gap: 10px; }
+      .btn{ font-size: 13px; }
+    }
+  </style>
 </body>
 </html>
