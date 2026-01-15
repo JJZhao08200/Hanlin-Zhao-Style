@@ -389,3 +389,51 @@ h2{
   border-color: rgba(255,204,0,1);
 }
 
+/* ==============================
+   Layout v3 (方案三): tighter center + intentional margins
+   Add this block at the END of style-program.css
+============================== */
+
+/* 1) tighten max width (the main change) */
+:root{
+  --maxw: 900px; /* try 880px if you want more "blog" */
+}
+
+/* 2) quiet side margins (subtle center emphasis) */
+body{
+  background:
+    radial-gradient(1200px 600px at 50% 120px,
+      rgba(255,255,255,.035),
+      rgba(0,0,0,0) 60%
+    ),
+    linear-gradient(to right,
+      #000 0%,
+      #000 18%,
+      #050505 50%,
+      #000 82%,
+      #000 100%
+    );
+}
+
+/* 3) slightly reduce container padding so the column feels "editorial" */
+.container{
+  max-width: var(--maxw);
+  padding: 24px;
+}
+
+/* 4) slightly tighten typographic rhythm (subtle) */
+.card{
+  margin-bottom: 24px;
+}
+
+.subtitle{
+  margin-bottom: 10px;
+}
+
+/* Optional: on very large screens, keep it book-like */
+@media (min-width: 1600px){
+  .container{
+    max-width: 880px;
+  }
+}
+
