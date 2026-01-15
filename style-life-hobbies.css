@@ -137,10 +137,14 @@ main{ padding-top: 64px; }
 }
 
 .hero-inner{
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* 水平绝对居中 */
+  justify-content: center;  /* 垂直绝对居中 */
+  text-align: center;
+
   padding: 0 18px;
-  max-width: 980px;
+  max-width: 1000px;
 }
 
 .hero h1{
@@ -153,11 +157,21 @@ main{ padding-top: 64px; }
 }
 
 .hero p{
-  margin:10px 0 0;
-  color:rgba(255,255,255,.92);
-  font-size: 1.02rem;
-  text-shadow: 0 16px 40px rgba(0,0,0,.55);
+  margin-top: 14px;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+
+  color: rgba(255,255,255,.92);
+
+  /* 高级感来源👇 */
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.45),
+    0 0 18px rgba(255,255,255,.12);
+
+  opacity: .95;
 }
+
 
 /* ==============================
    Container (stronger “center column”)
