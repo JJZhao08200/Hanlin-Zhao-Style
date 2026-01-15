@@ -107,7 +107,7 @@ main{ padding-top: 64px; }
    Hero (more cinematic)
 ============================== */
 .hero{
-  height: 420px;              /* ✅ 更高一些（你想要） */
+  height: 220px;              /* ✅ 更高一些（你想要） */
   padding-top: 70px;
   display:flex;
   align-items:center;
