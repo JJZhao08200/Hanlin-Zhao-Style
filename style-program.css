@@ -96,3 +96,76 @@ nav ul li a {
 nav ul li a:hover {
     color: #ff6600;
 }
+
+/* ===== Programs page enhancements ===== */
+
+/* Unified cover image ratio */
+.project-cover{
+  width: 100%;
+  height: 360px;           /* desktop cover height */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  margin: 10px 0 10px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+}
+
+@media (max-width: 640px){
+  .project-cover{ height: 220px; }
+}
+
+/* Role / Impact block */
+.ri{
+  margin: 14px 0 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+
+.ri-row{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 6px 0;
+}
+
+.ri-k{
+  flex: 0 0 78px;
+  font-size: 12px;
+  letter-spacing: .2px;
+  color: rgba(255,204,0,.92);
+  text-transform: uppercase;
+}
+
+.ri-v{
+  font-size: 13.5px;
+  color: rgba(255,255,255,.84);
+  line-height: 1.55;
+}
+
+/* Demo note inline */
+.note-inline{
+  color: rgba(255,255,255,.70);
+  font-size: 13px;
+}
+
+/* Checklist styling (replaces ✔️ paragraphs) */
+.checklist{
+  margin: 10px 0 12px;
+  padding-left: 18px;
+  color: rgba(255,255,255,.84);
+}
+
+.checklist li{
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Scroll-spy active state for hero jump buttons */
+.program-jump .jump-link.is-active{
+  border-color: rgba(255,204,0,.95);
+  background: rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
