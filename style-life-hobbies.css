@@ -121,7 +121,7 @@ main{ padding-top: 64px; }
       rgba(0,0,0,.28) 55%,
       rgba(0,0,0,.40) 100%
     ),
-    url("lifeback.png") center 78% / cover no-repeat;  /* ✅ 往下挪：78% 你可以微调 70~90% */
+    url("lifeback.png") center 70% / cover no-repeat;  /* ✅ 往下挪：78% 你可以微调 70~90% */
 
   border-bottom: none;        /* ✅ 关键：去掉白色缝隙来源 */
 }
