@@ -520,3 +520,132 @@ html{
     transform: translateY(-1px);
   }
 }
+
+/* =========================
+   My Journey (photo + cards)
+========================= */
+.journey-wrap{
+  margin-top: 18px;
+}
+
+.journey-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.journey-sub{
+  margin: 6px 0 0;
+  opacity: .78;
+}
+
+.journey-grid{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 14px;
+  align-items:start;
+}
+
+.journey-aside{
+  border-radius: 16px;
+  overflow:hidden;
+}
+
+.journey-photo{
+  width:100%;
+  height: 360px;
+  object-fit: cover;
+  display:block;
+}
+
+.journey-photo-meta{
+  padding: 12px 12px 14px;
+}
+
+.journey-name{
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.journey-role{
+  margin-top: 4px;
+  opacity: .78;
+  font-size: .95rem;
+}
+
+/* timeline item should look like clickable card */
+.timeline a.timeline-item{
+  display:block;
+  text-decoration:none;
+  color: inherit;
+}
+
+.t-more{
+  margin-top: 12px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  opacity: .95;
+  display:inline-flex;
+  align-items:center;
+  gap: 6px;
+}
+
+.t-more span{
+  transform: translateY(1px);
+}
+
+/* detail page */
+.back-link{
+  display:inline-block;
+  margin-bottom: 14px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.journey-detail .jd-title{
+  margin: 0 0 8px;
+}
+
+.journey-detail .jd-meta{
+  opacity: .8;
+  margin-bottom: 12px;
+}
+
+.journey-detail .jd-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.journey-detail .jd-content{
+  max-width: 72ch;
+}
+
+.journey-detail .jd-content p{
+  margin: 0 0 12px;
+}
+
+.journey-detail .jd-box{
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.18);
+}
+
+.journey-detail .jd-box-title{
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 920px){
+  .journey-grid{
+    grid-template-columns: 1fr;
+  }
+  .journey-photo{
+    height: 320px;
+  }
+}
