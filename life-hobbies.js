@@ -1,159 +1,162 @@
 (function () {
+  // ====== CONFIG ======
   const GALLERIES = {
     hiking: {
       title: "Hiking & Exploring",
-      sub: "Click a photo to view larger.",
+      sub: "High-altitude treks and mountain solitude.",
+      path: "hobbies/hiking/",
       photos: [
-        { src: "hiking-01.jpg", caption: "Abuji Tso, Yunnan — 4,400m." },
-        { src: "hiking-02.jpg", caption: "On the ridge — wind and silence." },
-        { src: "hiking-03.jpg", caption: "A moment before the clouds rolled in." }
+        "Abuji Tso, Yunnan — 4,400m. Thin air, clear mind.",
+        "On the trail — clouds rolling over the ridge.",
+        "Summit moment — quiet, wind, and breath.",
+        "Morning light in the mountains.",
+        "Rest stop — water tastes different at altitude.",
+        "Camp before sunset.",
+        "Trail disappearing into fog.",
+        "Cold night, warm tea.",
+        "Boots covered in dust and snow.",
+        "A ridge I won’t forget."
       ]
     },
+
     roadtrip: {
       title: "Road Trip",
       sub: "Miles, playlists, and detours.",
+      path: "hobbies/roadtrip/",
       photos: [
-        { src: "roadtrip-01.jpg", caption: "West Coast drive — golden hour." },
-        { src: "roadtrip-02.jpg", caption: "National park stop — the kind of silence you can hear." },
-        { src: "roadtrip-03.jpg", caption: "Tang Poetry Road — Hangzhou → Wenzhou." }
+        "West Coast highway — golden hour.",
+        "Crossing state lines.",
+        "Desert road toward Las Vegas.",
+        "Yellowstone — steam and silence.",
+        "Salt Lake City skyline.",
+        "Long straight road, short thoughts.",
+        "Car and sky.",
+        "National park pull-off.",
+        "Endless horizon.",
+        "Night drive with music."
       ]
     },
+
     music: {
       title: "Writing Music",
-      sub: "Guitar and songwriting.",
+      sub: "Guitar, songwriting, and late nights.",
+      path: "hobbies/music/",
       photos: [
-        { src: "music-01.jpg", caption: "My guitar setup — simple and enough to write." },
-        { src: "music-02.jpg", caption: "A new riff, recorded late at night." }
+        "My guitar setup.",
+        "Song draft notes.",
+        "Recording late at night.",
+        "Strings and calluses.",
+        "Practice corner."
       ]
     },
+
     poem: {
       title: "Writing Poem",
-      sub: "Each line is a footprint.",
+      sub: "Words as footprints.",
+      path: "hobbies/poem/",
       photos: [
-        { src: "poem-01.jpg", caption: "Notebook page — first draft lines." },
-        { src: "poem-02.jpg", caption: "Final version — polished and calm." }
+        "Notebook — first draft.",
+        "Rewriting a line.",
+        "Final version.",
+        "Poem written on the road."
       ]
     },
+
     sports: {
       title: "Sports",
-      sub: "10m air rifle · recurve bow · tennis",
+      sub: "Precision, focus, repetition.",
+      path: "hobbies/sports/",
       photos: [
-        { src: "sports-01.jpg", caption: "Range day — steady breath, steady sight." },
-        { src: "sports-02.jpg", caption: "Recurve practice — form before power." }
+        "10m air rifle range.",
+        "Recurve bow practice.",
+        "Tennis session — 3.0–3.5.",
+        "Quiet before the shot."
       ]
     },
+
     offroad: {
       title: "Off-Road",
       sub: "Stave Lake and mountain gravel.",
+      path: "hobbies/offroad/",
       photos: [
-        { src: "offroad-01.jpg", caption: "Stave Lake — mud, grip, and a perfect view." },
-        { src: "offroad-02.jpg", caption: "A route I’d drive again and again." }
+        "Stave Lake trail.",
+        "Mud and grip.",
+        "Forest road.",
+        "Last off-road trip before selling the car."
       ]
     }
   };
 
+  // ====== MODAL ELEMENTS ======
   const modal = document.getElementById("galleryModal");
   const titleEl = document.getElementById("galleryTitle");
   const subEl = document.getElementById("gallerySub");
   const gridEl = document.getElementById("galleryGrid");
-
   const viewer = document.getElementById("galleryViewer");
   const viewerImg = document.getElementById("viewerImg");
   const viewerCap = document.getElementById("viewerCap");
   const prevBtn = modal.querySelector(".viewer-btn.prev");
   const nextBtn = modal.querySelector(".viewer-btn.next");
 
-  let activeKey = null;
-  let activeIndex = 0;
+  let active = null;
+  let index = 0;
 
   function openModal(key) {
     const g = GALLERIES[key];
     if (!g) return;
 
-    activeKey = key;
-    activeIndex = 0;
+    active = g;
+    index = 0;
 
-    titleEl.textContent = g.title || "Gallery";
-    subEl.textContent = g.sub || "Click a photo to view larger.";
+    titleEl.textContent = g.title;
+    subEl.textContent = g.sub;
 
     gridEl.innerHTML = "";
-    g.photos.forEach((p, idx) => {
+    g.photos.forEach((cap, i) => {
       const tile = document.createElement("div");
       tile.className = "gallery-tile";
-      tile.tabIndex = 0;
       tile.innerHTML = `
-        <img src="${p.src}" alt="${(p.caption || g.title || "Photo").replace(/"/g, "&quot;")}" />
-        <div class="cap">${p.caption || ""}</div>
+        <img src="${g.path}${String(i + 1).padStart(2, "0")}.jpg" />
+        <div class="cap">${cap}</div>
       `;
-      tile.addEventListener("click", () => openViewer(idx));
-      tile.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          openViewer(idx);
-        }
-      });
+      tile.onclick = () => openViewer(i);
       gridEl.appendChild(tile);
     });
 
     viewer.classList.remove("is-open");
-    viewer.setAttribute("aria-hidden", "true");
-
     modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   }
 
   function closeModal() {
     modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    activeKey = null;
   }
 
-  function openViewer(idx) {
-    const g = GALLERIES[activeKey];
-    if (!g) return;
-
-    activeIndex = idx;
-    const p = g.photos[activeIndex];
-
-    viewerImg.src = p.src;
-    viewerImg.alt = p.caption || g.title || "Photo";
-    viewerCap.textContent = p.caption || "";
-
+  function openViewer(i) {
+    index = i;
+    viewerImg.src = `${active.path}${String(i + 1).padStart(2, "0")}.jpg`;
+    viewerCap.textContent = active.photos[i];
     viewer.classList.add("is-open");
-    viewer.setAttribute("aria-hidden", "false");
   }
 
   function step(dir) {
-    const g = GALLERIES[activeKey];
-    if (!g || !g.photos.length) return;
-    activeIndex = (activeIndex + dir + g.photos.length) % g.photos.length;
-    openViewer(activeIndex);
+    index = (index + dir + active.photos.length) % active.photos.length;
+    openViewer(index);
   }
 
-  document.querySelectorAll("[data-gallery]").forEach((img) => {
-    img.style.cursor = "pointer";
-    img.setAttribute("tabindex", "0");
-
-    img.addEventListener("click", () => openModal(img.dataset.gallery));
-    img.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openModal(img.dataset.gallery);
-      }
-    });
+  document.querySelectorAll("[data-gallery]").forEach(img => {
+    img.onclick = () => openModal(img.dataset.gallery);
   });
 
-  modal.addEventListener("click", (e) => {
-    const t = e.target;
-    if (t && t.dataset && t.dataset.close === "true") closeModal();
-  });
+  modal.onclick = e => {
+    if (e.target.dataset.close) closeModal();
+  };
 
-  prevBtn.addEventListener("click", () => step(-1));
-  nextBtn.addEventListener("click", () => step(1));
+  prevBtn.onclick = () => step(-1);
+  nextBtn.onclick = () => step(1);
 
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", e => {
     if (!modal.classList.contains("is-open")) return;
     if (e.key === "Escape") closeModal();
     if (e.key === "ArrowLeft") step(-1);
