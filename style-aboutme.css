@@ -649,3 +649,13 @@ html{
     height: 320px;
   }
 }
+
+/* Mobile: collapse keywords by default, expand when .is-open */
+@media (max-width: 920px){
+  .timeline-item .t-keywords{ 
+    display:none;
+  }
+  .timeline-item.is-open .t-keywords{
+    display:flex;
+  }
+}
