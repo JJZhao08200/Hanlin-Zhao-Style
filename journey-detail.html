@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journey Detail - Hanlin Zhao</title>
+  <link rel="stylesheet" href="style-aboutme.css" />
+</head>
+<body>
+
+  <!-- Reuse header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">HELLO</a></li>
+        <li><a href="about.html" class="active">PROFILE</a></li>
+        <li><a href="program.html">PROGRAMS</a></li>
+        <li><a href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-container" style="padding-top: 26px;">
+      <div class="card m-hover" style="max-width: 980px; margin: 18px auto;">
+        <div class="card-body">
+
+          <a class="back-link" href="about.html#journey">‹ Back to My Journey</a>
+
+          <div id="detail" class="journey-detail">
+            <h1 class="jd-title">Loading…</h1>
+            <p class="jd-muted">If you see this for long, check that journey-data.js is in the same folder.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hanlin Zhao. All rights reserved.</p>
+  </footer>
+
+  <script src="journey-data.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const data = (window.JOURNEY_DATA || {})[id];
+    const el = document.getElementById("detail");
+
+    if (!data) {
+      el.innerHTML = `
+        <h1 class="jd-title">Not found</h1>
+        <p class="jd-muted">This journey entry does not exist.</p>
+      `;
+    } else {
+      el.innerHTML = `
+        <h1 class="jd-title">${data.title}</h1>
+        <div class="jd-meta"><strong>${data.org}</strong> · ${data.date}</div>
+
+        <div class="jd-tags">
+          ${data.tags.map(t => `<span class="kw">${t}</span>`).join("")}
+        </div>
+
+        <div class="jd-content">
+          ${data.paragraphs.map(p => `<p>${p}</p>`).join("")}
+        </div>
+
+        ${data.bullets && data.bullets.length ? `
+          <div class="jd-box">
+            <div class="jd-box-title">Highlights</div>
+            <ul>
+              ${data.bullets.map(b => `<li>${b}</li>`).join("")}
+            </ul>
+          </div>` : ""
+        }
+      `;
+    }
+  </script>
+</body>
+</html>
