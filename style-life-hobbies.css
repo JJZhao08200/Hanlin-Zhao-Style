@@ -687,3 +687,48 @@ main{ padding-top: 64px; }
   .gallery-tile img{ height: 210px; }
 }
 
+/* ===== Cover image "click for more" hint ===== */
+.hobby-media{
+  position: relative;
+}
+
+/* make it feel clickable */
+.hobby-media .hobby-img{
+  cursor: zoom-in;
+}
+
+/* subtle overlay hint */
+.hobby-media::after{
+  content: "View gallery  ↗";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+
+  font-size: 12px;
+  letter-spacing: .2px;
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  color: rgba(255,255,255,.92);
+  background: rgba(0,0,0,.42);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(10px);
+
+  opacity: .78;
+  transform: translateY(0);
+  transition: opacity .18s ease, transform .18s ease, background .18s ease, border-color .18s ease;
+  pointer-events: none; /* don't block clicks */
+}
+
+/* hover: more obvious */
+.hobby-card:hover .hobby-media::after{
+  opacity: 1;
+  transform: translateY(-1px);
+  background: rgba(0,0,0,.55);
+  border-color: rgba(255,255,255,.22);
+}
+
+/* mobile: always visible enough */
+@media (max-width: 900px){
+  .hobby-media::after{ opacity: .92; }
+}
