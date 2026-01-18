@@ -134,3 +134,45 @@ main{
 
   main{ padding-top: 62px; }
 }
+
+/* ==============================
+   Mobile nav MUST be scrollable
+   Paste at END of header.css
+============================== */
+@media (max-width: 760px){
+
+  /* let nav area shrink + scroll */
+  header nav,
+  .site-header nav,
+  .site-nav{
+    flex: 1;
+    min-width: 0;          /* ⭐ 关键：允许内部 overflow 生效 */
+    overflow-x: auto;      /* ⭐ 横向滚动放在 nav 上 */
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  header nav::-webkit-scrollbar,
+  .site-header nav::-webkit-scrollbar,
+  .site-nav::-webkit-scrollbar{
+    display: none;
+  }
+
+  /* ul stays inline */
+  header nav ul,
+  .site-nav ul{
+    display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 10px;
+    padding: 6px 2px;
+    margin: 0;
+  }
+
+  /* each link stays as pill */
+  header nav a,
+  .site-nav a{
+    flex: 0 0 auto;
+  }
+}
