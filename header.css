@@ -1,0 +1,136 @@
+/* ==============================
+   Unified Header (match HELLO)
+   Paste into ALL page CSS files
+============================== */
+
+/* base header */
+.site-header,
+header{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 22px;                 /* ✅ 统一高度：紧凑舒服 */
+  background: rgba(0,0,0,.72);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+}
+
+/* logo */
+.brand-link,
+header .logo{
+  display: inline-flex;
+  align-items: center;
+}
+.brand-logo,
+header .logo img{
+  height: 44px;                       /* ✅ 统一 logo 高度 */
+  width: auto;
+  display: block;
+}
+
+/* nav */
+.site-nav{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.site-nav ul,
+header nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 26px;                          /* ✅ 统一间距 */
+}
+
+/* links */
+.site-nav a,
+header nav a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.02rem;
+  opacity: .86;
+
+  padding: 8px 10px;
+  border-radius: 12px;
+
+  transition: opacity .18s ease, transform .18s ease, background .18s ease, color .18s ease;
+}
+
+.site-nav a:hover,
+header nav a:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.06);
+}
+
+.site-nav a.active,
+header nav a.active{
+  color: #ffcc00;
+  opacity: 1;
+  background: rgba(255,255,255,.06);
+}
+
+/* prevent content under header */
+main{
+  padding-top: 64px;                  /* ✅ 与 header 高度匹配 */
+}
+
+/* ==============================
+   Mobile: compact + scrollable tabs
+============================== */
+@media (max-width: 760px){
+  .site-header,
+  header{
+    padding: 10px 12px;
+    padding-top: calc(10px + env(safe-area-inset-top)); /* iPhone 安全区 */
+  }
+
+  .brand-logo,
+  header .logo img{
+    height: 34px;                     /* ✅ 手机更紧凑 */
+  }
+
+  /* nav horizontal scroll */
+  .site-nav{ justify-content: flex-end; }
+
+  .site-nav ul,
+  header nav ul{
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 6px 2px;
+  }
+  .site-nav ul::-webkit-scrollbar,
+  header nav ul::-webkit-scrollbar{
+    display: none;
+  }
+
+  .site-nav a,
+  header nav a{
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.10);
+  }
+
+  .site-nav a.active,
+  header nav a.active{
+    background: rgba(255,204,0,.14);
+    border-color: rgba(255,204,0,.35);
+    color: #ffcc00;
+  }
+
+  main{ padding-top: 62px; }
+}
