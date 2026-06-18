@@ -1,45 +1,105 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanlin Zhao - Personal Web</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <title>Hanlin Zhao — Data & Finance Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="header.css" />
     <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
     <header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">HELLO</a></li>
-            <li><a href="about.html">PROFILE</a></li>
-            <li><a href="program.html">PROGRAMS</a></li>
-            <li><a href="life-hobbies.html">LIFE & HOBBIES</a></li>
-            
-        </ul>
-    </nav>
-</header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">HELLO</a></li>
+                <li><a href="about.html">PROFILE</a></li>
+                <li><a href="program.html">PROJECTS</a></li>
+                <li><a href="life-hobbies.html">LIFE & HOBBIES</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="hero">
-        <h1>HANLIN ZHAO</h1>
-        <p>Hi👋, many HRs are interested in other's websites. So, I made one.</p>
+        <div class="hero-content">
+            <div class="hero-eyebrow">👋 Welcome</div>
+            <h1 class="hero-name">
+                <span class="typewriter" id="typewriter-name"></span><span class="cursor-blink">|</span>
+            </h1>
+            <p class="hero-tagline">
+                <span class="tag-item neon">Analyst</span>
+                <span class="tag-sep">/</span>
+                <span class="tag-item neon">Designer</span>
+                <span class="tag-sep">/</span>
+                <span class="tag-item neon">Poet</span>
+                <span class="tag-sep">/</span>
+                <span class="tag-item neon">Hiker</span>
+            </p>
+            <p id="dynamic-quote" class="hero-quote">Create, Adapt, Excel.</p>
+            <div class="hero-cta">
+                <a href="about.html" class="btn-primary">View Profile</a>
+                <a href="program.html" class="btn-ghost">See Projects</a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </div>
 
-    <section class="intro">
-        <p>Analyst | Designer | Poet | Hiker</p>
-        <p id="dynamic-quote">Create, Adapt, Excel.</p>
+    <section class="stats-bar">
+        <div class="stat">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Hackathon Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+            <span class="stat-num">UBC</span>
+            <span class="stat-label">Master's in Business Analytics</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+            <span class="stat-num">5+</span>
+            <span class="stat-label">Tools Mastered</span>
+        </div>
     </section>
 
     <footer>
-        <p>© 2025 Hanlin Zhao. All rights reserved.</p>
+        <p id="footer-year">© Hanlin Zhao. All rights reserved.</p>
     </footer>
 
     <script>
+        // Dynamic year
+        document.getElementById('footer-year').textContent =
+            `© ${new Date().getFullYear()} Hanlin Zhao. All rights reserved.`;
+
+        // Typewriter effect
+        const name = "HANLIN ZHAO";
+        const el = document.getElementById("typewriter-name");
+        let i = 0;
+        function type() {
+            if (i < name.length) {
+                el.textContent += name[i++];
+                setTimeout(type, 100);
+            } else {
+                document.querySelector('.cursor-blink').style.display = 'none';
+            }
+        }
+        setTimeout(type, 600);
+
+        // Rotating quotes
         const quotes = [
             "Dare to explore, strive to lead.",
             "Logic meets creativity.",
@@ -47,15 +107,79 @@
             "Redefining limits, unlocking potential."
         ];
         function changeQuote() {
-            const quoteElement = document.getElementById("dynamic-quote");
-            quoteElement.style.opacity = 0;
+            const q = document.getElementById("dynamic-quote");
+            q.style.opacity = 0;
+            q.style.transform = "translateY(8px)";
             setTimeout(() => {
-                const randomIndex = Math.floor(Math.random() * quotes.length);
-                quoteElement.textContent = quotes[randomIndex];
-                quoteElement.style.opacity = 1;
+                q.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+                q.style.opacity = 1;
+                q.style.transform = "translateY(0)";
             }, 500);
         }
         setInterval(changeQuote, 5000);
+
+        // Particle canvas
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.r = Math.random() * 1.5 + 0.5;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255,204,0,${this.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        for (let j = 0; j < 120; j++) particles.push(new Particle());
+
+        function drawLines() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a + 1; b < particles.length; b++) {
+                    const dx = particles[a].x - particles[b].x;
+                    const dy = particles[a].y - particles[b].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.strokeStyle = `rgba(255,204,0,${0.08 * (1 - dist / 100)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            drawLines();
+            requestAnimationFrame(animate);
+        }
+        animate();
     </script>
 </body>
 </html>

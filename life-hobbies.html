@@ -300,8 +300,12 @@
          Footer
     =============================== -->
     <footer class="site-footer">
-      <p>© 2025 Hanlin Zhao. All rights reserved.</p>
+      <p id="footer-year">© Hanlin Zhao. All rights reserved.</p>
     </footer>
+    <script>
+      document.getElementById('footer-year').textContent =
+        `© ${new Date().getFullYear()} Hanlin Zhao. All rights reserved.`;
+    </script>
   </main>
 
   <!-- ===== Gallery Modal (one-time) ===== -->
