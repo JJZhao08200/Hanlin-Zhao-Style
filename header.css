@@ -85,94 +85,113 @@ main{
 }
 
 /* ==============================
-   Mobile: compact + scrollable tabs
+   Hamburger button (hidden on desktop)
+============================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  flex-shrink: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+body.nav-overlay-open { overflow: hidden; }
+
+/* ==============================
+   Mobile: hamburger + full-screen overlay
 ============================== */
 @media (max-width: 760px){
   .site-header,
   header{
-    padding: 10px 12px;
-    padding-top: calc(10px + env(safe-area-inset-top)); /* iPhone 安全区 */
+    padding: 10px 16px;
+    padding-top: calc(10px + env(safe-area-inset-top));
   }
 
   .brand-logo,
-  header .logo img{
-    height: 34px;                     /* ✅ 手机更紧凑 */
+  header .logo img{ height: 34px; }
+
+  /* show hamburger */
+  .menu-toggle { display: flex; }
+
+  /* hide nav by default on mobile */
+  .site-nav,
+  header nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(5,5,8,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1050;
   }
 
-  /* nav horizontal scroll */
-  .site-nav{ justify-content: flex-end; }
+  .site-nav.nav-open,
+  header nav.nav-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   .site-nav ul,
-  header nav ul{
-    gap: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 6px 2px;
-  }
-  .site-nav ul::-webkit-scrollbar,
-  header nav ul::-webkit-scrollbar{
-    display: none;
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    white-space: normal;
+    overflow: visible;
+    padding: 0;
   }
 
   .site-nav a,
-  header nav a{
-    font-size: 14px;
-    padding: 8px 10px;
-    border-radius: 999px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.10);
+  header nav a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 8px 0;
+    background: none;
+    border: none;
+    opacity: 0.85;
+    border-radius: 0;
   }
 
+  .site-nav a:hover,
+  header nav a:hover,
   .site-nav a.active,
-  header nav a.active{
-    background: rgba(255,204,0,.14);
-    border-color: rgba(255,204,0,.35);
+  header nav a.active {
     color: #ffcc00;
+    opacity: 1;
+    background: none;
+    text-shadow: 0 0 20px rgba(255,204,0,0.5);
   }
 
   main{ padding-top: 62px; }
 }
 
-/* ==============================
-   Mobile nav MUST be scrollable
-   Paste at END of header.css
-============================== */
-@media (max-width: 760px){
-
-  /* let nav area shrink + scroll */
-  header nav,
-  .site-header nav,
-  .site-nav{
-    flex: 1;
-    min-width: 0;          /* ⭐ 关键：允许内部 overflow 生效 */
-    overflow-x: auto;      /* ⭐ 横向滚动放在 nav 上 */
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  header nav::-webkit-scrollbar,
-  .site-header nav::-webkit-scrollbar,
-  .site-nav::-webkit-scrollbar{
-    display: none;
-  }
-
-  /* ul stays inline */
-  header nav ul,
-  .site-nav ul{
-    display: inline-flex;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    gap: 10px;
-    padding: 6px 2px;
-    margin: 0;
-  }
-
-  /* each link stays as pill */
-  header nav a,
-  .site-nav a{
-    flex: 0 0 auto;
-  }
-}
