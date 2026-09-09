@@ -1,46 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programs - Hanlin Zhao</title>
+  <title>Projects - Hanlin Zhao</title>
   <link rel="stylesheet" href="style-program.css" />
   <link rel="stylesheet" href="header.css" />
 
+<link rel="stylesheet" href="theme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 
-<body>
+<body><a class="skip-link" href="#main">Skip to content</a>
   <!-- ===== Header ===== -->
   <header class="site-header">
-    <div class="brand">
-      <img src="logo.png" alt="Logo" class="brand-logo" />
-    </div>
-
-    <nav class="site-nav">
-      <ul>
-        <li><a href="index.html">HELLO</a></li>
-        <li><a href="about.html">PROFILE</a></li>
-        <li><a class="active" href="program.html">PROGRAMS</a></li>
-        <li><a href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  <a class="wordmark" href="index.html" aria-label="Hanlin Zhao home">hz<span>✳</span><span class="wordmark-caption">HANLIN ZHAO<br>PERSONAL SPACE</span></a>
+  <nav id="primary-nav" aria-label="Primary"><ul>
+    <li><a href="index.html">Hello</a></li><li><a href="about.html">Profile</a></li><li><a href="program.html" class="active" aria-current="page">Projects</a></li><li><a href="life-hobbies.html">Life &amp; hobbies</a></li>
+  </ul></nav>
+  <a class="header-contact" href="mailto:hanlinzhaojj@gmail.com">Let's talk <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
   <script src="hamburger.js" defer></script>
 
-  <main>
+  <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero">
       <div class="hero-inner">
-        <h1>MY PROGRAMS</h1>
+        <h1>SELECTED PROJECTS</h1>
         <p>Selected projects in analytics, finance &amp; data storytelling</p>
 
         <div class="hero-actions">
           <a class="btn ghost" href="#google-hack">2025 Google Hackathon</a>
           <a class="btn ghost" href="#climate-hack">2025 Climate Finance</a>
-          <a class="btn ghost" href="#learning-hack">2024 Learning Analytics</a>
         </div>
       </div>
     </section>
@@ -163,55 +155,6 @@
           <p>
             This experience deepened my understanding of sustainable finance, project structuring, and carbon markets, reinforcing the role of finance
             in accelerating climate innovation. Grateful for the insights from industry experts and my teammates!
-          </p>
-        </div>
-      </article>
-
-      <!-- ===== Project 3 ===== -->
-      <article class="card" id="learning-hack">
-        <div class="meta">
-          <span class="pill">Hackathon · Learning Analytics</span>
-          <span class="year">2024</span>
-        </div>
-
-        <h2>Learning Analytics Hackathon (Team HAX)</h2>
-        <p class="subtitle">
-          Award-winning dashboards to improve engagement quality and reduce disengaged “spam” posts in online learning.
-        </p>
-
-        <div class="ri">
-          <div class="ri-row">
-            <div class="ri-k">My role</div>
-            <div class="ri-v">Metric design · Dashboard build · Data analysis (Python/Tableau) · Storytelling</div>
-          </div>
-          <div class="ri-row">
-            <div class="ri-k">Impact</div>
-            <div class="ri-v">Won “Most Relevant to Teaching and Learning” for actionable instructor/student views</div>
-          </div>
-        </div>
-
-        <img class="cover" src="Lhack.png" alt="Learning Analytics Hackathon" />
-
-        <div class="chips">
-          <span class="chip">Python</span>
-          <span class="chip">Tableau</span>
-          <span class="chip">Data Analysis</span>
-          <span class="chip">Web Design</span>
-          <span class="chip">Engagement Metrics</span>
-        </div>
-
-        <div class="prose">
-          <p>
-            During the recent Learning Analytics Hackathon, I participated as part of Team HAX, where we won the
-            <strong>"Most Relevant to Teaching and Learning"</strong> award. Our project aimed to promote meaningful discussions aligned with learning
-            outcomes while reducing the number of disengaged or "spam" posts in online learning environments. We proposed dashboards for both instructors
-            and students to track engagement and ensure that discussions contributed to the intended learning objectives.
-          </p>
-
-          <p>
-            Throughout the process, I applied various technical skills, including Python, Tableau, data analysis, and web design, which were instrumental
-            in creating the dashboards and analyzing data to provide actionable insights. These combined efforts led to a solution that enhanced the overall
-            learning experience and contributed to our success in the competition.
           </p>
         </div>
       </article>

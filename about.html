@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,30 +7,23 @@
   <link rel="stylesheet" href="style-aboutme.css" />
   <link rel="stylesheet" href="header.css" />
 
+<link rel="stylesheet" href="theme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 
-<body>
+<body><a class="skip-link" href="#main">Skip to content</a>
   <!-- ===== Header ===== -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo" />
-    </div>
-
-    <nav>
-      <ul>
-        <li><a href="index.html">HELLO</a></li>
-        <li><a href="about.html" class="active">PROFILE</a></li>
-        <li><a href="program.html">PROGRAMS</a></li>
-        <li><a href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  <header class="site-header">
+  <a class="wordmark" href="index.html" aria-label="Hanlin Zhao home">hz<span>✳</span><span class="wordmark-caption">HANLIN ZHAO<br>PERSONAL SPACE</span></a>
+  <nav id="primary-nav" aria-label="Primary"><ul>
+    <li><a href="index.html">Hello</a></li><li><a href="about.html" class="active" aria-current="page">Profile</a></li><li><a href="program.html">Projects</a></li><li><a href="life-hobbies.html">Life &amp; hobbies</a></li>
+  </ul></nav>
+  <a class="header-contact" href="mailto:hanlinzhaojj@gmail.com">Let's talk <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
   <script src="hamburger.js" defer></script>
 
-  <main>
+  <main id="main">
     <!-- ===== Hero ===== -->
     <section class="hero">
       <h1>ABOUT ME</h1>
@@ -38,7 +31,7 @@
 
       <div class="hero-actions">
         <!-- 如果你有简历 PDF，把 href 改成 resume.pdf -->
-        <a class="btn" href="#" onclick="return false;">Download Resume</a>
+        <a class="btn" href="mailto:hanlinzhaojj@gmail.com?subject=Resume%20request">Request Resume</a>
         <a class="btn ghost" href="mailto:hanlinzhaojj@gmail.com">Email Me</a>
       </div>
     </section>
@@ -70,7 +63,7 @@
         <ul class="side-list">
           <li>
             <strong>Focus</strong><br />
-            Data &amp; Finance Analytics &amp; Stratigic Management
+            Data &amp; Finance Analytics &amp; Strategic Management
           </li>
           <li>
             <strong>Roles</strong><br />
@@ -101,7 +94,6 @@
         <div class="side-cta">
           <a class="btn full" href="mailto:hanlinzhaojj@gmail.com">Contact</a>
           <a class="btn ghost full" href="program.html">View Projects</a>
-          <a class="btn ghost full" href="#" onclick="return false;">LinkedIn</a>
         </div>
       </aside>
 

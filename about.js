@@ -40,27 +40,9 @@
       }
     });
 
-    // Keyboard accessibility:
-    // - Mobile: Enter/Space toggles (no navigation)
-    // - Desktop: Enter triggers normal link navigation; Space prevents scroll and navigates
-    item.addEventListener("keydown", (e) => {
-      const key = e.key;
-
-      // Only handle Enter/Space
-      if (key !== "Enter" && key !== " ") return;
-
-      if (isMobile()) {
-        // mobile: toggle only
-        e.preventDefault();
-        item.classList.toggle("is-open");
-      } else {
-        // desktop: keep default for Enter (navigate)
-        // Space on links scrolls page; make it behave like click navigation
-        if (key === " ") {
-          e.preventDefault();
-          item.click();
-        }
-      }
+    // Native Enter navigation works on desktop and mobile; Space follows the link.
+    item.addEventListener('keydown', (e) => {
+      if (e.key === ' ') { e.preventDefault(); window.location.href = item.href; }
     });
   });
 })();

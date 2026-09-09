@@ -7,34 +7,25 @@
   <link rel="stylesheet" href="style-life-hobbies.css" />
   <link rel="stylesheet" href="header.css" />
 
+<link rel="stylesheet" href="theme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 
-<body>
+<body><a class="skip-link" href="#main">Skip to content</a>
   <!-- ==============================
        Header / Nav
   =============================== -->
   <header class="site-header">
-    <div class="brand">
-      <a href="index.html" class="brand-link" aria-label="Go to homepage">
-        <img src="logo.png" alt="Logo" class="brand-logo" />
-      </a>
-    </div>
-
-    <nav class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">HELLO</a></li>
-        <li><a href="about.html">PROFILE</a></li>
-        <li><a href="program.html">PROGRAMS</a></li>
-        <li><a class="active" href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
+  <a class="wordmark" href="index.html" aria-label="Hanlin Zhao home">hz<span>✳</span><span class="wordmark-caption">HANLIN ZHAO<br>PERSONAL SPACE</span></a>
+  <nav id="primary-nav" aria-label="Primary"><ul>
+    <li><a href="index.html">Hello</a></li><li><a href="about.html">Profile</a></li><li><a href="program.html">Projects</a></li><li><a href="life-hobbies.html" class="active" aria-current="page">Life &amp; hobbies</a></li>
+  </ul></nav>
+  <a class="header-contact" href="mailto:hanlinzhaojj@gmail.com">Let's talk <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
   <script src="hamburger.js" defer></script>
 
-  <main>
+  <main id="main">
     <!-- ==============================
          Hero
     =============================== -->

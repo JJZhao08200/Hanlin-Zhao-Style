@@ -5,26 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Journey Detail - Hanlin Zhao</title>
   <link rel="stylesheet" href="style-aboutme.css" />
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
-<body>
+<body><a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Reuse header -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Logo" />
-    </div>
+  <header class="site-header">
+  <a class="wordmark" href="index.html" aria-label="Hanlin Zhao home">hz<span>✳</span><span class="wordmark-caption">HANLIN ZHAO<br>PERSONAL SPACE</span></a>
+  <nav id="primary-nav" aria-label="Primary"><ul>
+    <li><a href="index.html">Hello</a></li><li><a href="about.html" class="active" aria-current="page">Profile</a></li><li><a href="program.html">Projects</a></li><li><a href="life-hobbies.html">Life &amp; hobbies</a></li>
+  </ul></nav>
+  <a class="header-contact" href="mailto:hanlinzhaojj@gmail.com">Let's talk <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">HELLO</a></li>
-        <li><a href="about.html" class="active">PROFILE</a></li>
-        <li><a href="program.html">PROGRAMS</a></li>
-        <li><a href="life-hobbies.html">LIFE &amp; HOBBIES</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
+  <main id="main">
     <section class="about-container" style="padding-top: 26px;">
       <div class="card m-hover" style="max-width: 980px; margin: 18px auto;">
         <div class="card-body">
@@ -42,11 +39,12 @@
   </main>
 
   <footer>
-    <p>© 2025 Hanlin Zhao. All rights reserved.</p>
+    <p id="footer-year">© Hanlin Zhao. All rights reserved.</p>
   </footer>
 
   <script src="journey-data.js"></script>
   <script>
+    document.getElementById('footer-year').textContent = `© ${new Date().getFullYear()} Hanlin Zhao. All rights reserved.`;
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
     const data = (window.JOURNEY_DATA || {})[id];
@@ -81,5 +79,6 @@
       `;
     }
   </script>
+<script src="hamburger.js" defer></script>
 </body>
 </html>

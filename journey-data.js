@@ -5,19 +5,12 @@ window.JOURNEY_DATA = {
     date: "Jul 2025 – Oct 2025",
     tags: ["Market analysis", "Finance Analysis", "Dashboarding"],
     paragraphs: [
-      "The company is a renowned German automotive engineering and technology services firm, providing advanced R&D and engineering solutions to OEMs across powertrain systems, electrical and electronic architecture, vehicle development, intelligent driving, and connected vehicle technologies.
-
-During the internship, I independently conducted automotive industry research, produced analytical and presentation materials, and delivered internal briefings on industry trends, including live presentations and Q&A sessions with multidisciplinary stakeholders."
+      "The company is a renowned German automotive engineering and technology services firm, providing advanced R&D and engineering solutions to OEMs across powertrain systems, electrical and electronic architecture, vehicle development, intelligent driving, and connected vehicle technologies.\n\nDuring the internship, I independently conducted automotive industry research, produced analytical and presentation materials, and delivered internal briefings on industry trends, including live presentations and Q&A sessions with multidisciplinary stakeholders."
     ],
     bullets: [
-      "Highlight 1 Supported planning and execution of innovation campaigns and ideation workshops by delivering timely strategic intelligence on market
-trends, competitor movements, and emerging technologies, contributing original ideas aligned with the company’s automotive innovation
-strategy",
-      "Highlight 2 Designed and maintained an innovation intelligence dashboard using Python, Excel, Power BI, and SharePoint, centralizing real-time sales
-data, supply chain trends, new model specifications, and industry insights across ADAS, connectivity, and future tech roadmaps (e.g., Gartner
-Hype Cycle)",
-      "Highlight 3 Participated in the HMI development and localization for the vehicle launch in Southeast Asia and South America, ensuring UI design met
-local user expectations and regulatory standards"
+      "Highlight 1 Supported planning and execution of innovation campaigns and ideation workshops by delivering timely strategic intelligence on market\ntrends, competitor movements, and emerging technologies, contributing original ideas aligned with the company’s automotive innovation\nstrategy",
+      "Highlight 2 Designed and maintained an innovation intelligence dashboard using Python, Excel, Power BI, and SharePoint, centralizing real-time sales\ndata, supply chain trends, new model specifications, and industry insights across ADAS, connectivity, and future tech roadmaps (e.g., Gartner\nHype Cycle)",
+      "Highlight 3 Participated in the HMI development and localization for the vehicle launch in Southeast Asia and South America, ensuring UI design met\nlocal user expectations and regulatory standards"
     ]
   },
 
@@ -27,21 +20,21 @@ local user expectations and regulatory standards"
     date: "May 2025 – Jul 2025",
     tags: ["KPI Reporting", "Project Management", "Cost Analysis"],
     paragraphs: [
-      "Write your Redteam project details here (problem, approach, dashboards, decisions)."
+      "Industry project consulting at Redteam Projects Inc., with a focus on KPI reporting, project management, and cost analysis."
     ],
     bullets: [
-      "Highlight 1",
-      "Highlight 2"
+      "KPI reporting and project management",
+      "Cost analysis"
     ]
   },
 
   mban: {
-    title: "Master’s Degree",
+    title: "Master of Business Analytics",
     org: "UBC Sauder School of Business",
     date: "2024 – 2025",
     tags: ["Business analytics", "Data visualization", "Decision making"],
     paragraphs: [
-      "Write what you learned, key projects, and how it shaped your focus."
+      "Master of Business Analytics at UBC Sauder School of Business, with a focus on business analytics, data visualization, and decision-making."
     ]
   },
 
@@ -51,7 +44,7 @@ local user expectations and regulatory standards"
     date: "2020 – 2024",
     tags: ["Financial accounting", "Management accounting", "Finance"],
     paragraphs: [
-      "Write your foundation training, focus areas, and representative experiences."
+      "Bachelor of Commerce in Accounting at UBC Sauder School of Business. Focus areas include financial accounting, management accounting, and finance."
     ]
   }
 };
