@@ -89,11 +89,16 @@
 
   // Only reference photographs that exist in the repository.
   GALLERIES.hiking.photos = GALLERIES.hiking.photos.slice(0, 6);
-  const coverPhotos = {roadtrip: 'R.png', music: 'M.png', poem: 'wirte.png', sports: 'shoot.png', offroad: 'offroad.png'};
+  const coverPhotos = {roadtrip: 'hobbies/roadtrip/roadtrip-cover.jpg', music: 'M.png', poem: 'wirte.png', sports: 'shoot.png', offroad: 'offroad.png'};
   Object.entries(GALLERIES).forEach(([key, gallery]) => {
     gallery.images = key === 'hiking'
       ? gallery.photos.map((caption, i) => ({src: gallery.path + (i < 4 ? 'web-' : '') + String(i + 1).padStart(2, '0') + '.jpg', caption: 'Hiking journal — ' + String(i + 1).padStart(2, '0')}))
-      : [{src: coverPhotos[key], caption: gallery.title}];
+      : key === 'offroad'
+        ? [
+            {src: coverPhotos.offroad, caption: 'Off-road journal'},
+            {src: 'hobbies/offroad/offroad-02.jpg', caption: 'Trail crew at Stave Lake'}
+          ]
+        : [{src: coverPhotos[key], caption: gallery.title}];
   });
   const modal = document.getElementById('galleryModal');
   const panel = modal.querySelector('.gallery-panel');
