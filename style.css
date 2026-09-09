@@ -8,3 +8,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.orbit-one{transform:translate(-50%,-50%) rotate(-30deg) rotateX(58deg)}.orbit-two{transform:translate(-50%,-50%) rotate(55deg) rotateX(58deg)}.orbit-three{transform:translate(-50%,-50%) rotateY(38deg)}}
 .page-hidden *{animation-play-state:paused!important}
 .orb-core img{display:block;width:82px;height:82px}
+.credentials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 30px}.credentials strong{font-size:21px}.credentials span{max-width:190px;font-size:10.5px;line-height:1.55}
+@media(max-width:430px){.credentials{gap:24px 22px}.credentials strong{font-size:19px}.credentials span{font-size:10px}}
